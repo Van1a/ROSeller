@@ -1,0 +1,65 @@
+ikura remember this.
+the sequence will be
+
+1. log,
+2. fetch,
+3. sell
+
+
+below is the documentaion below all about this code so you understand a little how this workspace code it was kinda complicated to understand cause i modularized everything for readability
+API Used:
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+> assets.ts
+= retrieveAssetInfo() 
+/ https://economy.roblox.com/v2/assets/${assetId}/details
+to retrieve metadata for webhook detail and some stuff like creator.
+
+> retrieveResellParams()
+multi fetched function this also called another function inside which is the `retrieveAssetInfo()`, `retrieveInstanceInfo() - from inventory.ts`
+/ `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/resellable-instances?ownerType=User&ownerId=${dataClient.roblox.userid}&limit=500`,
+/ https://economy.roblox.com/v2/assets/${assetId}/details
+in this code this was used to get all neccesary data at once to handle multiple copies of ugc which economy api cannot do alone.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+> asset.ts
+= retrieveCSRF()
+/ https://auth.roblox.com/v2/logout
+using logout because it was less rate limit that other api, and also this was used to fetch csrf from headers.
+
+> retrieveUser()
+/ "https://users.roblox.com/v1/users/authenticated",
+this api returned username, userid, name this is basicaly a core in this code because the inventory api need useid as retrieveResellParams
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+> inventory.ts
+= retrieveInstanceInfo()
+/ `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/resellable-instances?ownerType=User&ownerId=${dataClient.roblox.userid}&limit=500`,
+i just used this to get the serial from specific collectible lol, and also the productidInstance is kinda neccesary since it was unique id from each copy
+
+= inventoryView()
+/ `https://inventory.roblox.com/v1/users/${dataClient.roblox.userid}/can-view-inventory`,
+we need to verify first whether the user inventory is private if yes then we need him to required to enable it
+
+= retrieveAsset()
+/ `https://inventory.roblox.com/v2/users/${dataClient.roblox.userid}/inventory/${assetType}?limit=100&cursor=${cursor}`,
+so this api used to fetch all item from user note it will return basically everything so filter the collectible to non
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+> resell.ts
+/ `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/instance/${collectibleItemInstanceId}/resale`,
+the main core of this code the api that resell the item for you, PATCH method
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+to do 
+https://economy.roblox.com/v2/users/1531406642/transactions?limit=10&cursor=&transactionType=Sale
+
+https://friends.roblox.com/v1/users/${UserIdToFollow}/follow - {"success":true,"isCaptchaRequired":false}
+https://apis.roblox.com/marketplace-sales/v1/item/505397ca-e70c-4472-81a5-e243075ee667/get-resale-parameters
+https://apis.roblox.com/marketplace-sales/v1/item/505397ca-e70c-4472-81a5-e243075ee667/resellers?cursor=&limit=100
+more
