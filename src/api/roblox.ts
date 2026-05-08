@@ -1,7 +1,7 @@
 import "dotenv/config";
 import axios from "axios";
 import { delay } from "../misc/helper.js";
-import { error, success, warning, devmodelog } from "../misc/logger.js";
+import { error, success, info, warning, devmodelog } from "../misc/logger.js";
 import { type User, type CachedUser } from "../types/api.js";
 
 class RobloxAPI {
@@ -32,7 +32,7 @@ class RobloxAPI {
 
   async getUser(): Promise<User> {
     const now = Date.now();
-    const cacheDuration = 12 * 60 * 60 * 1000; // 12 hours
+    const cacheDuration = 12 * 60 * 60 * 1000;
 
     if (this.userCache && now - this.userCache.ttl < cacheDuration) {
       devmodelog("[RobloxAPI] Using cached user");
@@ -56,12 +56,16 @@ class RobloxAPI {
       throw new Error("Authentication failed");
     } catch (err: any) {
       const status = err?.response?.status;
+
       if (status === 401) error("Invalid cookie");
+
       if (status === 429) {
-        warning("Rate limited, retrying in 120s");
-        await delay(120000, "Retrying authentication");
+        const resetIn = Number(err?.response?.headers?.["x-ratelimit-reset"] ?? 120);
+        warning(`Rate limited, retrying in ${resetIn}s`);
+        await delay(resetIn * 1000, "\nRetrying authentication\n");
         return this.getUser();
       }
+
       throw err;
     }
   }
@@ -92,8 +96,24 @@ class RobloxAPI {
       devmodelog(`[RobloxAPI] ${method} ${url} -> ${res.status}`);
 
       if (res.status === 429) {
-        warning(`Rate limited, retrying in 60s`);
-        await delay(60000, "Retrying request");
+        const resetIn = Number(res.headers["x-ratelimit-reset"] ?? 60);
+
+        warning(`Rate limited, retrying in ${resetIn}s`);
+
+        let remaining = resetIn;
+
+        const interval = setInterval(() => {
+          process.stdout.write(`\rRetrying in ${remaining}s   `);
+          remaining--;
+
+          if (remaining <= 0) {
+            clearInterval(interval);
+            process.stdout.write("\n");
+          }
+        }, 1000);
+
+        await delay(resetIn * 1000, "Retrying request");
+
         return this.request(method, url, data, useCSRF);
       }
 
@@ -103,11 +123,6 @@ class RobloxAPI {
 
       return res.data;
     } catch (err: any) {
-      if (err?.response?.status === 429) {
-        warning(`Rate limited on ${url}, retrying in 60s`);
-        await delay(60000, "Retrying request");
-        return this.request(method, url, data, useCSRF);
-      }
       throw err;
     }
   }
