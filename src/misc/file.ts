@@ -51,7 +51,6 @@ const removeFromInventory = async (item: any, skip: boolean): Promise<void> => {
     const instanceId = item.itemInstances[0].collectibleInstanceId;
     if (!instanceId) return;
 
-    info(`${instanceId}`);
     devmodelog(`[removeFromInventory] > removing ${instanceId}`);
 
     const raw = await fs

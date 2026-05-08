@@ -34,7 +34,7 @@ const config: Config = {
   },
   developer: {
     enable: false,
-    skip_comfirmation: true,
+    skip_comfirmation: false,
   },
 };
 

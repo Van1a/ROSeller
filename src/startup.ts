@@ -24,9 +24,9 @@ const version = async (): Promise<void> => {
   )
 
   if (config.version !== retrieveVersion.data.trim()) {
-    console.log("Note: backup your config before updating")
+    warning("Updating may break your current configuration.ts so please make a copy first before running this")
 
-    const res = (await input("New Version detected (Y/P/N): ")).toLowerCase()
+    const res = (await input(`New Version detected want to update your version? "Y/N" or want to see first the patch list? type "P" `)).toLowerCase()
 
     if (res === "y") {
       try {
@@ -44,7 +44,7 @@ const version = async (): Promise<void> => {
     return
   }
 
-  console.log("Continuing now")
+  console.log(`Continuing now with ${retrieveVersion.data}`)
 }
 
 const start = async (): Promise<boolean> => {
@@ -209,4 +209,4 @@ const autoseller = async (): Promise<void> => {
   if (!started) return;
 };
 
-export { start, autoseller };
+export { start, autoseller, version };

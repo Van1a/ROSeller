@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-red?style=flat-square" />
+  <img src="https://img.shields.io/badge/version-1.0.2-red?style=flat-square" />
   <img src="https://img.shields.io/badge/license-BSL--1.0-464646?style=flat-square" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Android-333333?style=flat-square" />
@@ -29,6 +29,16 @@ Written entirely in TypeScript with an async-first design. Configuration is done
 
 > **License:** This project is licensed under the **Business Source License (BSL)**. You may view and run the code locally. Modification, redistribution, sublicensing, or commercial use is strictly prohibited. Publishing this code under a different name is a license violation.
 
+Below is what it looks like when running the code. Sorry for the low quality.
+
+## Running
+
+![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/starting.gif)
+
+## Reselling
+
+![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/reselling.gif)
+
 ---
 
 ## Table of Contents
@@ -44,6 +54,7 @@ Written entirely in TypeScript with an async-first design. Configuration is done
   - [Windows](#windows)
   - [Mobile  Termux](#mobile--termux)
 - [Running the App](#running-the-app)
+- [Running with .bat](#bat)
 - [Support](#support)
 
 ---

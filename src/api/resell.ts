@@ -50,8 +50,6 @@ const getCurrentPrice = async (collectibleItemId: string): Promise<number> => {
       `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/resellers?cursor=&limit=10`,
     );
 
-    console.log(list.data.length);
-
     if (list.data.length === 0) {
       return config.autosaleConfiguration.default_price_no_competition;
     }
