@@ -5,17 +5,25 @@ const config: Config = {
   websocket: {
     enable: false,
     message:
-      "This function was not yet implemented. this will be used for gui (web based) interaction, IM THINKING IF I SHOULD MAKE THIS PAID CONSIDERING THE AMOUNT TIME I DID",
+      "This function was not yet implemented. this will be used for gui (web based) interaction, IM THINKING IF I SHOULD MAKE THIS PAID CONSIDERING THE AMOUNT TIME I USED",
   },
   webhook: {
     onsale: {
-      enable: false,
-      webhookUrl: "",
+      enable: true,
+      webhookUrl: "https://discordapp.com/api/webhooks/1499738719807213650/LuYykVzUbX8yY7Anh-wf9LI4s_vWhirX67KshBZ9eZvHXWWZ9l5NHbTiQCz_Q09aQBG2",
+      ping: {
+        enable: true,
+        discordUserId: 728972494253326369,
+      },
     },
     onSold: {
-      enable: false,
+      enable: true,
       ms: 120000,
-      webhookUrl: "url",
+      webhookUrl: "https://discordapp.com/api/webhooks/1499738719807213650/LuYykVzUbX8yY7Anh-wf9LI4s_vWhirX67KshBZ9eZvHXWWZ9l5NHbTiQCz_Q09aQBG2",
+      ping: {
+        enable: false,
+        discordUserId: 728972494253326369,
+      }
     },
   },
   autosaleConfiguration: {
@@ -33,7 +41,7 @@ const config: Config = {
     },
   },
   developer: {
-    enable: false,
+    enable: true,
     skip_comfirmation: false,
   },
 };

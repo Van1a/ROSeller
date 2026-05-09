@@ -1,8 +1,10 @@
 ## Patch Notes
 
 ###  Fixed
-- Fixed an issue in the auto-seller where a conflict between fallback pricing and last seller price caused unintended fallback to default UGC pricing.
-- Fixed an error during item selling caused by cached CSRF tokens not refreshing properly, resulting in the use of expired CSRF values.
+- Fixed the messy output from ratelimit
+
+### New:
+- Added latency check, If your latency hit 1000 a custom output will appear saying that ""
 
 ###  Improvements
 - Optimized API calls to reduce unnecessary requests and improve overall performance and response time.

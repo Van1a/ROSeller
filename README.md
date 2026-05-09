@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Van1a/roseller/main/asset/rosellerlogo.png" width="320"/>
+  <img src="https://raw.githubusercontent.com/Van1a/vsblox/refs/heads/main/Images/ROSeller1-ezgif.com-speed.gif" width="920"/>
 </p>
 
 <h1 align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.2-red?style=flat-square" />
+  <img src="https://img.shields.io/badge/version-1.0.4-red?style=flat-square" />
   <img src="https://img.shields.io/badge/license-BSL--1.0-464646?style=flat-square" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Android-333333?style=flat-square" />

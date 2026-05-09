@@ -11,8 +11,6 @@ import { retrieveInventory, retrieveOnmarket } from "./misc/file.js";
 import { getResellData } from "./api/asset.js";
 import { resellItem } from "./api/resell.js";
 
-const sleep = (ms: number) =>
-  new Promise<void>((resolve) => setTimeout(resolve, ms));
 
 const version = async (): Promise<void> => {
   const retrieveVersion = await axios.get<string>(
@@ -57,19 +55,15 @@ const start = async (): Promise<boolean> => {
   }
 
   info("Initializing client configuration...");
-  await sleep(800);
 
   info("Checking if cookie is valid...........");
   await retrieveUser();
 
   info("Running system checks: WebSocket module...");
-  await sleep(600);
   warning("skipped (disabled by configuration)");
-  await sleep(500);
 
   info("_________________________________________________-");
   info("Validating webhook endpoints...");
-  await sleep(700);
 
   if (config.webhook.onsale.enable) {
     if (!config.webhook.onsale.webhookUrl) {
@@ -79,7 +73,8 @@ const start = async (): Promise<boolean> => {
 
     const ok = await verifyWebhook(
       config.webhook.onsale.webhookUrl,
-      "Successfully configured. We verified this webhook and it is valid. You will receive updates in this channel.",
+      "On-Sale"
+      
     );
 
     if (ok) success("Onsale webhook is valid");
@@ -97,7 +92,7 @@ const start = async (): Promise<boolean> => {
 
     const ok = await verifyWebhook(
       config.webhook.onSold.webhookUrl,
-      "Successfully configured. We verified this webhook and it is valid. You will receive updates about your sales.",
+      "On-Sold",
     );
 
     if (ok) success("On-sold webhook is valid");
@@ -108,16 +103,12 @@ const start = async (): Promise<boolean> => {
   }
 
   success("Webhook channels verified and active.");
-  await sleep(800);
 
   info("_________________________________________________-");
   info("Loading autosale configuration...");
-  await sleep(700);
 
   if (config.autosaleConfiguration.enable) {
     success("Autosale system enabled.");
-    await sleep(500);
-
     if (!config.autosaleConfiguration.default_price_no_competition) {
       error("Critical error: default price is not configured.");
       return false;
@@ -126,8 +117,6 @@ const start = async (): Promise<boolean> => {
     info(
       `Fallback price set to ${config.autosaleConfiguration.default_price_no_competition}`,
     );
-    await sleep(600);
-
     if (config.autosaleConfiguration.skip_serial.length > 0) {
       info(
         `Protected serials: ${config.autosaleConfiguration.skip_serial.join(", ")}`,
@@ -136,10 +125,7 @@ const start = async (): Promise<boolean> => {
       warning("No protected serials configured.");
     }
 
-    await sleep(600);
-
     info("Evaluating pricing strategy...");
-    await sleep(500);
 
     if (config.autosaleConfiguration.price_cut.enable) {
       success(
@@ -149,7 +135,6 @@ const start = async (): Promise<boolean> => {
       warning("Price cut disabled");
     }
 
-    await sleep(600);
   }
 
   info("_________________________________________________-");

@@ -59,6 +59,8 @@ const getResellData = async (
         collectibleItemId: i.collectibleItemId!,
         collectibleProductId: i.collectibleProductId!,
         serialNumber: i.serialNumber!,
+        saleState: i.saleState,
+        price: i.price,
       }));
 
     return {

@@ -78,6 +78,8 @@ export interface ResellData {
     collectibleItemId: string;
     collectibleProductId: string;
     serialNumber: number;
+    saleState: string;
+    price: number;
   }[];
 }
 
@@ -91,6 +93,8 @@ export interface InstanceResponse {
     saleState: string;
     price: number;
   }[];
+  nextPageCursor: string;
+  previousPageCursor: string;
 }
 
 export interface CollectibleItem {

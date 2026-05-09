@@ -1,10 +1,10 @@
 import { config } from "../configuration.js"
 import { info } from "./logger.js"
 
-const delay = (ms: number, msg: string): Promise<void> => {
+const delay = (ms: number, msg?: string): Promise<void> => {
   return new Promise(resolve => {
     setTimeout(() => {
-      info(msg)
+      if (msg) info(msg)
       resolve()
     }, ms)
   })

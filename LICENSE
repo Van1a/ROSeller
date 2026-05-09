@@ -1,122 +1,118 @@
 ROSeller Business Source License (BSL) v1.0
 
-Copyright (c) 2026 ROSeller Project. All rights reserved.
+Copyright © 2026 ROSeller Project. All rights reserved.
 
-------------------------------------------------------------
+────────────────────────────────────────────────────────────
+
 1. DEFINITIONS
-------------------------------------------------------------
 
-"Software" refers to the ROSeller codebase, including but not limited to all source code, scripts, configuration files, documentation, API integrations, and any associated assets distributed with the repository.
+"Software"       — The ROSeller codebase, including all source code, scripts,
+                   configuration files, documentation, API integrations, and
+                   associated assets.
 
-"Author" refers to the original creator and copyright holder of ROSeller.
+"Author"         — The original creator and copyright holder of ROSeller.
 
-"Licensee" refers to any individual, organization, or entity that accesses, copies, uses, or interacts with the Software in any form.
+"Licensee"       — Any individual, organization, or entity that accesses,
+                   copies, uses, or interacts with the Software in any form.
 
-"Use" refers to executing, running, compiling, testing, studying, or otherwise interacting with the Software.
+"Use"            — Executing, running, compiling, testing, studying, or
+                   otherwise interacting with the Software.
 
-"Commercial Use" refers to any direct or indirect use of the Software intended to generate revenue, profit, or financial benefit. This includes but is not limited to:
-- Selling the Software or modified versions of it
-- Offering it as a service (SaaS, API, bot hosting, automation services)
-- Bundling it into paid products or subscriptions
-- Using it in systems that generate revenue for an individual or organization
+"Commercial Use" — Any direct or indirect use of the Software intended to
+                   generate revenue or financial benefit, including:
+                     · Selling the Software or modified versions of it
+                     · Offering it as a service (SaaS, API, bot hosting)
+                     · Bundling it into paid products or subscriptions
+                     · Using it in any revenue-generating system
 
-"Fork" refers to creating a copy or derivative version of the Software, whether modified or unmodified, intended for independent development, redistribution, or deployment.
+"Fork"           — Creating a copy or derivative of the Software for
+                   independent development, redistribution, or deployment.
 
-------------------------------------------------------------
+────────────────────────────────────────────────────────────
+
 2. GRANT OF RIGHTS
-------------------------------------------------------------
 
-Subject to the terms and restrictions of this License, the Author grants the Licensee a limited, non-exclusive, non-transferable, revocable license to:
+Subject to this License, the Author grants the Licensee a limited,
+non-exclusive, non-transferable, and revocable license to:
 
-- View and inspect the Software source code
-- Run the Software for personal, educational, or internal non-commercial purposes
-- Modify the Software strictly for personal experimentation or private evaluation
+  · View and inspect the source code
+  · Run the Software for personal, educational, or internal
+    non-commercial purposes
+  · Modify the Software solely for personal experimentation or
+    private evaluation
 
 No ownership rights are transferred under this License.
 
-------------------------------------------------------------
-3. STRICT RESTRICTIONS (BEFORE CHANGE DATE)
-------------------------------------------------------------
+────────────────────────────────────────────────────────────
 
-Unless explicitly permitted in writing by the Author, the Licensee is strictly prohibited from:
+3. RESTRICTIONS
 
-3.1 Commercial Use
-- Using the Software for any Commercial Use
-- Monetizing the Software in any form, directly or indirectly
+Unless explicitly permitted in writing by the Author, the Licensee may not:
 
-3.2 Redistribution
-- Distributing, publishing, or sharing the Software (modified or unmodified)
-- Re-uploading the Software to any platform, repository, or service
+  · Commercial Use    — Use or monetize the Software in any
+                        revenue-generating capacity
+  · Redistribution    — Distribute, publish, or re-upload the Software
+                        in any form
+  · Derivative Works  — Fork, publish, or recreate the Software for
+                        public release or competing purposes
+  · Competing Services— Use the Software to build or operate tools, bots,
+                        or automation services that compete with ROSeller
+  · Circumvention     — Attempt to bypass or obscure these restrictions
+                        through any technical or legal means
 
-3.3 Forking & Derivative Works
-- Forking the Software for public release
-- Publishing derivative works based on the Software
-- Recreating or reimplementing the Software for competing purposes
+────────────────────────────────────────────────────────────
 
-3.4 Service Competition
-- Using the Software to build or operate competing tools, bots, automation systems, or services
+4. CHANGE DATE
 
-3.5 Circumvention
-- Attempting to bypass, obscure, or violate these restrictions through technical or legal modifications
+Effective: January 1, 2029
 
-------------------------------------------------------------
-4. CHANGE DATE (AUTOMATIC LICENSE TRANSITION)
-------------------------------------------------------------
+On or after this date, this License automatically converts to the MIT License,
+unless otherwise modified by the Author. All restrictions in Section 3 will
+cease to apply.
 
-Effective Date: 01 January 2029
+────────────────────────────────────────────────────────────
 
-On or after the Effective Date, and unless otherwise modified by the Author, this License shall automatically convert to the MIT License.
+5. ATTRIBUTION
 
-After conversion:
-- The Software will be governed by the MIT License terms
-- All restrictions listed in Section 3 will no longer apply under this License
+Where use is explicitly permitted by the Author, the Licensee must:
 
-------------------------------------------------------------
-5. ATTRIBUTION REQUIREMENTS
-------------------------------------------------------------
+  · Retain the original project name ROSeller
+  · Include clear attribution to the Author in any derived use or interface
+  · Not remove or obscure any copyright notices
 
-If any usage is explicitly permitted by the Author, the Licensee must:
+────────────────────────────────────────────────────────────
 
-- Retain original project name: ROSeller
-- Include clear attribution to the Author in any derived use or interface
-- Not remove or obscure copyright notices
+6. INTELLECTUAL PROPERTY
 
-------------------------------------------------------------
-6. INTELLECTUAL PROPERTY RIGHTS
-------------------------------------------------------------
+All rights, title, and interest in the Software remain exclusively with the
+Author. No patent, trademark, or additional intellectual property rights are
+granted unless explicitly stated.
 
-All rights, title, and interest in and to the Software remain exclusively with the Author.
+────────────────────────────────────────────────────────────
 
-No patent rights, trademark rights, or additional intellectual property rights are granted under this License unless explicitly stated.
-
-------------------------------------------------------------
 7. WARRANTY DISCLAIMER
-------------------------------------------------------------
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. THE AUTHOR DISCLAIMS ALL WARRANTIES INCLUDING BUT NOT LIMITED TO
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-THE AUTHOR DISCLAIMS ALL WARRANTIES INCLUDING BUT NOT LIMITED TO:
-- MERCHANTABILITY
-- FITNESS FOR A PARTICULAR PURPOSE
-- NON-INFRINGEMENT
+The Author shall not be held liable for any damages, losses, bans, service
+interruptions, or consequences resulting from the use or misuse of the Software.
 
-The Author shall not be held liable for any damages, losses, bans, service interruptions, or consequences resulting from the use or misuse of the Software.
+────────────────────────────────────────────────────────────
 
-------------------------------------------------------------
 8. TERMINATION
-------------------------------------------------------------
 
-Any violation of this License automatically and immediately terminates all rights granted to the Licensee.
+Any violation of this License immediately terminates all rights granted to
+the Licensee. Upon termination, the Licensee must:
 
-Upon termination, the Licensee must:
-- Cease all use of the Software
-- Delete all copies in their possession
-- Stop distribution or execution of any derived version
+  · Cease all use of the Software
+  · Delete all copies in their possession
+  · Stop distribution or execution of any derived version
 
-------------------------------------------------------------
+────────────────────────────────────────────────────────────
+
 9. NO IMPLIED RIGHTS
-------------------------------------------------------------
 
 No rights or licenses are granted except as expressly stated in this License.
-
 Any use not explicitly permitted is strictly prohibited.

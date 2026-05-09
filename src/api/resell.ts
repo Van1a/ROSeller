@@ -1,7 +1,7 @@
 import { robloxAPI } from "./roblox.js";
 import { calculateDiscount } from "../misc/helper.js";
 import { removeFromInventory } from "../misc/file.js";
-import { updateOnSale } from "./webhook/hook.js";
+import { webhookUpdateOnsale } from "./webhook/hook.js";
 import { getAssetThumbnail } from "./thumbnail.js";
 import { config } from "../configuration.js";
 import { getResellData } from "./asset.js";
@@ -11,10 +11,11 @@ import {
   type ResellersResponse,
   type PriceHistory,
   type ResellData,
+  type InstanceResponse,
 } from "../types/api.js";
 
 const priceCache = new Map<string, { price: number; timestamp: number }>();
-const CACHE_DURATION = 60000; // 1 minute
+const CACHE_DURATION = 60000;
 
 const hasPriceHistory = async (collectibleItemId: string): Promise<boolean> => {
   try {
@@ -69,6 +70,57 @@ const getCurrentPrice = async (collectibleItemId: string): Promise<number> => {
     }
 
     return config.autosaleConfiguration.default_price_no_competition;
+  }
+};
+
+
+const wasAlreadyOnsale = async (instanceId: string): Promise<boolean> => {
+  const matchesInstance = (instances: InstanceResponse["itemInstances"]) =>
+    instances?.some(
+      (i) => i.collectibleInstanceId === instanceId && i.saleState === "OnSale"
+    );
+
+  const buildUrl = (cursor: string) =>
+    `https://apis.roblox.com/marketplace-sales/v1/item/f52d5476-782d-4048-be24-6079ad45b8c2/resellable-instances?cursor=${cursor}&ownerType=User&ownerId=1531406642&limit=500`;
+
+  const paginate = async (
+    startCursor: string | null,
+    direction: "next" | "prev"
+  ): Promise<boolean> => {
+    let cursor = startCursor;
+    while (cursor !== null) {
+      const res: InstanceResponse = await robloxAPI.request<InstanceResponse>(
+        "GET",
+        buildUrl(cursor)
+      );
+      if (matchesInstance(res.itemInstances)) return true;
+      cursor =
+        direction === "next"
+          ? (res.nextPageCursor ?? null)
+          : (res.previousPageCursor ?? null);
+    }
+    return false;
+  };
+
+  try {
+    // Fetch first page
+    const firstRes: InstanceResponse = await robloxAPI.request<InstanceResponse>(
+      "GET",
+      buildUrl("")
+    );
+
+    if (matchesInstance(firstRes.itemInstances)) return true;
+
+    // Paginate both directions in parallel
+    const [fromNext, fromPrev] = await Promise.all([
+      paginate(firstRes.nextPageCursor ?? null, "next"),
+      paginate(firstRes.previousPageCursor ?? null, "prev"),
+    ]);
+
+    return fromNext || fromPrev;
+  } catch (err: any) {
+    console.log(err?.response?.status);
+    return false;
   }
 };
 
@@ -145,7 +197,7 @@ const resellItem = async (
     warning(
       `Skipping ${itemData.name} ${serial}# due to skip serial configuration`,
     );
-    removeFromInventory(itemData, true);
+    await removeFromInventory(itemData, true);
     return;
   }
 
@@ -154,7 +206,7 @@ const resellItem = async (
     warning(
       `Skipping ${itemData.name} ${serial}# because this item is not resellable`,
     );
-    removeFromInventory(itemData, true);
+    await removeFromInventory(itemData, true);
     return;
   }
 
@@ -192,21 +244,28 @@ const resellItem = async (
     const imageUrl = thumb?.data?.[0]?.imageUrl ?? "";
 
     success(`Item ${itemData.name} (${serial}#) is now listed at ${price}`);
-    removeFromInventory(itemData, false);
-    await updateOnSale(
+    await removeFromInventory(itemData, false);
+
+    // webhook send on update
+    await webhookUpdateOnsale(
       itemData.name,
       itemData.assetId,
-      imageUrl,
       serial,
       price,
-    );
+      itemData.collectiblesItemDetails.TotalQuantity,
+      itemData.creator.Name,
+      itemData.creator.CreatorTargetId,
+      itemData.creator.CreatorType,
+      imageUrl,
+    )
+
     return;
   } catch (err: any) {
     const status = err?.response?.status;
 
     if (status === 412) {
       warning(`This item ${itemData.name} is not resellable. Skipping`);
-      removeFromInventory(itemData, true);
+      await removeFromInventory(itemData, true);
       return;
     }
 
@@ -235,4 +294,4 @@ const resellItem = async (
   }
 };
 
-export { resellItem, getCurrentPrice };
+export { resellItem, getCurrentPrice, wasAlreadyOnsale };

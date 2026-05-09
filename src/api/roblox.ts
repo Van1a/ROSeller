@@ -1,8 +1,10 @@
 import "dotenv/config";
+import chalk from "chalk";
 import axios from "axios";
-import { delay } from "../misc/helper.js";
 import { error, success, info, warning, devmodelog } from "../misc/logger.js";
 import { type User, type CachedUser } from "../types/api.js";
+
+const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
 class RobloxAPI {
   private cookie: string;
@@ -11,6 +13,20 @@ class RobloxAPI {
   constructor() {
     this.cookie = process.env.ROBLOX_COOKIE || "";
     if (!this.cookie) throw new Error("ROBLOX_COOKIE not set");
+  }
+
+  private startCountdown(seconds: number): void {
+    let remaining = seconds;
+    process.stdout.write(chalk.grey`Rate limited, retrying in ${remaining}s`);
+
+    const interval = setInterval(() => {
+      remaining--;
+      process.stdout.write(`\r\x1b[KRate limited, retrying in ${remaining}s`);
+      if (remaining <= 0) {
+        clearInterval(interval);
+        process.stdout.write("\n");
+      }
+    }, 1000);
   }
 
   private async getCSRF(): Promise<string> {
@@ -61,8 +77,8 @@ class RobloxAPI {
 
       if (status === 429) {
         const resetIn = Number(err?.response?.headers?.["x-ratelimit-reset"] ?? 120);
-        warning(`Rate limited, retrying in ${resetIn}s`);
-        await delay(resetIn * 1000, "\nRetrying authentication\n");
+        this.startCountdown(resetIn);
+        await wait(resetIn * 1000);
         return this.getUser();
       }
 
@@ -84,6 +100,8 @@ class RobloxAPI {
       headers["X-CSRF-Token"] = await this.getCSRF();
     }
 
+    const start = Date.now();
+
     try {
       const res = await axios.request<T>({
         method,
@@ -93,36 +111,30 @@ class RobloxAPI {
         validateStatus: () => true,
       });
 
-      devmodelog(`[RobloxAPI] ${method} ${url} -> ${res.status}`);
+      const latency = Date.now() - start;
+
+      devmodelog(`[RobloxAPI] ${method} ${url} -> ${res.status} (${latency}ms)`);
+
+      if (latency > 1000) {
+        warning(`We detected your latency was high (${latency}ms). Expect the request to be slower than usual`);
+      }
 
       if (res.status === 429) {
         const resetIn = Number(res.headers["x-ratelimit-reset"] ?? 60);
-
-        warning(`Rate limited, retrying in ${resetIn}s`);
-
-        let remaining = resetIn;
-
-        const interval = setInterval(() => {
-          process.stdout.write(`\rRetrying in ${remaining}s   `);
-          remaining--;
-
-          if (remaining <= 0) {
-            clearInterval(interval);
-            process.stdout.write("\n");
-          }
-        }, 1000);
-
-        await delay(resetIn * 1000, "Retrying request");
-
+        this.startCountdown(resetIn);
+        await wait(resetIn * 1000);
         return this.request(method, url, data, useCSRF);
       }
 
       if (res.status >= 400) {
+        devmodelog(`Request failed: ${res.status} ${res.data}`)
         throw new Error(`Request failed: ${res.status}`);
       }
 
       return res.data;
     } catch (err: any) {
+      const latency = Date.now() - start;
+      warning(`[RobloxAPI] request failed after ${latency} ${err.response.data}ms`);
       throw err;
     }
   }

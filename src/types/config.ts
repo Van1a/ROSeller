@@ -8,11 +8,19 @@ export interface Config {
     onsale: {
       enable: boolean;
       webhookUrl: string;
+      ping: {
+        enable: boolean;
+        discordUserId: number;
+      };
     };
     onSold: {
       enable: boolean;
       ms: number;
       webhookUrl: string;
+      ping: {
+        enable: boolean;
+        discordUserId: number;
+      };
     };
   };
   autosaleConfiguration: {
