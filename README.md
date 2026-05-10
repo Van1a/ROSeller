@@ -1,14 +1,16 @@
+----
+
+<p align="center">
+<img height="488" width=1520" src="https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/texticon.png"> </img>
+</p>
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/Van1a/vsblox/refs/heads/main/Images/ROSeller1-ezgif.com-speed.gif" width="920"/>
 </p>
 
-<h1 align="center">
-  <span style="color:#9CA3AF">Ro</span><span style="color:#ff4d4d">Seller</span>
-</h1>
 
-<p align="center">
-  Automated Roblox collectible limited item seller built with TypeScript.
-</p>
+
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.0.4-red?style=flat-square" />
@@ -32,12 +34,21 @@ Written entirely in TypeScript with an async-first design. Configuration is done
 Below is what it looks like when running the code. Sorry for the low quality.
 
 ## Running
+This shows what running the code looks like. It may be outdated since we keep updating it, but this video was recorded when it was still on Flat version 1.0.0.
 
 ![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/starting.gif)
 
 ## Reselling
 
 ![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/reselling.gif)
+
+
+## Webhook Overview
+![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/on-sale.png)
+![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/on-sold.png)
+![Running](https://raw.githubusercontent.com/Van1a/ROSeller/main/asset/webhookVerified.png)
+
+
 
 ---
 
@@ -105,32 +116,70 @@ Fires when an item is **successfully listed** on the marketplace. The notificati
 |---|---|---|
 | `enable` | `boolean` | Turns this event on or off. |
 | `webhookUrl` | `string` | Your Discord webhook URL. |
+| `ping.enable` | `boolean`| Enable Ping User |
+|`ping.discordUserId`|`number`| Ping the User by UserId|
+
+- example
+```json
+{
+  "onSold": {
+    "enable": true,
+    "ms": 120000,
+    "webhookUrl": "https://discordapp.com/api/webhooks/Van1a/Roseller-Webhook-Example",
+    "ping": {
+      "enable": true,
+      "discordUserId": 123456789210
+    }
+  }
+}
+```
 
 #### `onSold`
 
 Fires when a buyer **purchases** a listed item. Roblox has no native sale event, so this works by polling  taking a snapshot of active listings at a set interval and comparing it to the previous snapshot to detect removals.
+
 
 | Field | Type | Description |
 |---|---|---|
 | `enable` | `boolean` | Turns this event on or off. |
 | `webhookUrl` | `string` | Your Discord webhook URL. |
 | `ms` | `number` | How often (in milliseconds) to poll for sale changes. |
-
+| `ping.enable` | `boolean`| Enable Ping User |
+|`ping.discordUserId`|`number`| Ping the User by UserId|
 > **Recommended polling interval:** `120000` (2 minutes). Values below `10000` will generate excessive API traffic, trigger rate limits, and can interrupt active selling.
+
+- example
+```json
+{
+  "onSold": {
+    "enable": true,
+    "ms": 120000,
+    "webhookUrl": "https://discordapp.com/api/webhooks/Van1a/Roseller-Webhook-Example",
+    "ping": {
+      "enable": true,
+      "discordUserId": 123456789210
+    }
+  }
+}
+```
+
+**See the embed example in [Webhook Overview](#webhook-overview)**
 
 ---
 
 ### Auto Sale
 
 Controls item listing behavior and price strategy.
-
 | Field | Type | Description |
 |---|---|---|
 | `enable` | `boolean` | Master toggle for the auto-selling system. When `false`, no listings are submitted. |
 | `default_price_no_competition` | `number` | Price used when no other sellers exist for an item. Applies to rare or low-supply items where undercutting isn't possible. |
+| `skip_on_sale` | `boolean` | This uses a simple algorithm to check whether an item was already on sale. However, it does not store any data, so it is volatile. If a reset happens, it will make another API request to verify the item again — making it a perfect fit for `skip_on_sale_persist`. |
+| `skip_on_sale_persist` | `boolean` | `skip_on_sale_persist`: similar to [skip_on_sale](#skip_on_sale), but this is a [**PERSIST**](https://www.google.com/search?q=persist+meaning+in+programming&sca_esv=827c5b7b45126b9a&biw=1707&bih=820&ei=x0j_aaWRDcrt1e8P4aW_kQo&oq=persist+meaning+in+prog&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3BlcnNpc3QgbWVhbmluZyBpbiBwcm9nKgIIADIFEAAYgAQyCxAAGIAEGIoFGIYDMgsQABiABBiKBRiGAzIIEAAYgAQYogQyBRAAGO8FMgUQABjvBUjML1CqA1j-IHADeAGQAQCYAXugAd4HqgEDNC42uAEByAEA-AEBmAINoALFCsICChAAGEcY1gQYsAPCAg0QABiABBiKBRhDGLADwgIKEAAYgAQYigUYQ8ICDxAAGIAEGIoFGEMY-QEYRsICKRAAGIAEGIoFGEMY-QEYRhiXBRiMBRjdBBhGGPkBGPQDGPUDGPYD2AEBwgIGEAAYFhgewgIIEAAYFhgeGArCAgUQIRigAcICBRAhGJ8FwgILEAAYgAQYigUYkQKYAwCIBgGQBgq6BgYIARABGBOSBwM0LjmgB4ZMsgcDMS45uAeKCsIHCTItMi42LjQuMcgHtAKACAE&sclient=gws-wiz-serp) version. This is useful if your stored inventory.json is accidentally deleted, as it prevents further API calls to check whether the item was already on sale. |
+| `skip_assetId` | `number[]` | Skip the asset ID. |
 | `skip_serial` | `number[]` | Array of serial numbers to exclude from auto-listing. These items are detected and skipped before any API calls are made. |
-| ` creator.enable `| `boolean`|Skip the item owned by that creator. |
-|`creator.skip_creator `| `number[]` | List of creator Id's.|
+| `creator.enable` | `boolean` | Skip the item owned by that creator. |
+| `creator.skip_creator` | `number[]` | List of creator Id's. |
 | `price_cut.enable` | `boolean` | Enables undercut pricing. When `false`, items are listed at the price floor. |
 | `price_cut.percentage` | `number` | The percentage subtracted from the current lowest competitor price to determine your listing price. |
 
@@ -146,6 +195,26 @@ Your list price   →  103.95
 
 If the calculated price falls below the verified Roblox price floor, the floor value is used instead.
 
+* Example
+```json
+autosaleConfiguration: {
+  enable: true,
+  default_price_no_competition: 1000,
+  skip_on_sale: true,
+  skip_on_sale_persist: true,
+  skip_serial: [2, 6, 1],
+  skip_assetId: [524523643, 4235235, 12232435],
+  creator: {
+    enable: true,
+    skip_creator: [134311, 2654622],
+  },
+  price_cut: {
+    enable: true,
+    percentage: 5,
+  },
+},
+```
+
 ---
 
 ### Developer Mode
@@ -156,8 +225,18 @@ Enables verbose debug output across all internal functions. Logs include raw API
 |---|---|---|
 | `developer.enable` | `boolean` | Activates debug logging. Should be `false` during normal use. |
 | `developer.skip_comfirmation`| `boolean`| skip the comfirmation. Enable this when you know everything is valid. |
-
+|`remove_latency_warning`|`boolean`|Latency output can sometimes be annoying, so you can disable the logging here.|
 > When submitting a bug report, set this to `true` first and include a screenshot of the terminal output. Bug reports without logs cannot be diagnosed.
+
+* example
+```json
+developer: {
+    enable: false,
+    skip_comfirmation: false,
+    remove_latency_warning: false
+},
+```
+
 
 ---
 
@@ -165,33 +244,53 @@ Enables verbose debug output across all internal functions. Logs include raw API
 
 ```ts
 const config: Config = {
+  version: "1.0.4",
   websocket: {
     enable: false,
+    message:
+      "This function was not yet implemented. this will be used for gui (web based) interaction, IM THINKING IF I SHOULD MAKE THIS PAID CONSIDERING THE AMOUNT TIME I USED",
   },
   webhook: {
     onsale: {
       enable: true,
-      webhookUrl: ""
+      webhookUrl: "https://discord.com/api/webhooks/EXAMPLE/EXAMPLE",
+      ping: {
+        enable: true,
+        discordUserId: 000000000000000000,
+      },
     },
     onSold: {
-      enable: false,
+      enable: true,
       ms: 120000,
-      webhookUrl: ""
-    }
+      webhookUrl: "https://discord.com/api/webhooks/EXAMPLE/EXAMPLE",
+      ping: {
+        enable: false,
+        discordUserId: 000000000000000000,
+      }
+    },
   },
   autosaleConfiguration: {
     enable: true,
-    default_price_no_competition: 2500,
+    default_price_no_competition: 10000,
+    skip_on_sale: true,
+    skip_on_sale_persist: true,
     skip_serial: [1, 2, 3],
+    skip_assetId: [0, 0, 0, 0],
+    creator: {
+      enable: true,
+      skip_creator: [0, 0],
+    },
     price_cut: {
       enable: true,
-      percentage: 2
-    }
+      percentage: 2,
+    },
   },
   developer: {
-    enable: false
-  }
-}
+    enable: false,
+    skip_comfirmation: false,
+    remove_latency_warning: true
+  },
+};
 ```
 
 ---
@@ -292,7 +391,23 @@ The steps are the same on Windows and Termux.
 
 ### Step 1  Set your Roblox cookie
 
-Create a `.env` file in the project root with the following content:
+To set up the cookie in Termux, note that `.env` files are hidden by default. So even if you run `ls`, it won’t show up in the directory listing.
+
+However, you can still open or create it directly using:
+
+```bash
+nano .env
+```
+
+This lets you edit the file normally, even though it’s hidden.
+
+If you want to see hidden files in the folder, you can use:
+
+```bash
+ls -a
+```
+
+That will display `.env` and any other hidden files.
 
 ```env
 ROBLOX_COOKIE=your_cookie_value_here

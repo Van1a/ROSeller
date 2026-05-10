@@ -1,25 +1,123 @@
 {
   "data": [
     {
-      "assetId": 14575181536,
-      "assetName": "Crown Of Eggs",
-      "serialNumber": 7334,
-      "collectibleItemId": "5a86ca80-1014-407a-b96d-92d886764b2c",
-      "collectibleItemInstanceId": "19b4a34b-1671-4704-b1b5-fa42a20e3f7c"
+      "assetId": 14945571749,
+      "assetName": "Elemental Hood of Bullet",
+      "serialNumber": 93,
+      "collectibleItemId": "ac5d0680-5590-4ed4-9d86-e3c799699dcf",
+      "collectibleItemInstanceId": "0390b272-8cd0-4358-9a2a-3e3511098e43"
     },
     {
-      "assetId": 14272982720,
-      "assetName": "Paris Hilton Pink Headphones",
-      "serialNumber": 4691,
-      "collectibleItemId": "3d21d44b-92bb-432d-803c-32477fb72d4d",
-      "collectibleItemInstanceId": "4d4d698a-48f7-4523-97cb-ee7ea1193390"
+      "assetId": 14951082333,
+      "assetName": "Purple Devil Pumpkin",
+      "serialNumber": 357,
+      "collectibleItemId": "78e18e55-581d-44b8-9665-4fb0399f0f59",
+      "collectibleItemInstanceId": "ef6c8fd8-4ba8-4ba4-b317-3ab95a3b3cbf"
     },
     {
-      "assetId": 14566190022,
-      "assetName": "Splorp Plushie Hat",
-      "serialNumber": 6386,
-      "collectibleItemId": "dcb8aa76-b9a5-4686-9002-6d20cdc7321b",
-      "collectibleItemInstanceId": "68b433c5-37a9-4529-9757-509a1c7184dc"
+      "assetId": 15069000140,
+      "assetName": "Moonlight Star Helm",
+      "serialNumber": 1350,
+      "collectibleItemId": "c960b454-2da1-4900-89a1-4e3cff83ad66",
+      "collectibleItemInstanceId": "d42e5e25-c183-4672-a9a8-6222dadbd426"
+    },
+    {
+      "assetId": 15051175080,
+      "assetName": "Disco Headwrap",
+      "serialNumber": 298,
+      "collectibleItemId": "64e8ce27-fb10-492b-8a4a-7b5b150bff74",
+      "collectibleItemInstanceId": "440939eb-16ca-4481-ab13-e0662c1d9f39"
+    },
+    {
+      "assetId": 14979134327,
+      "assetName": "Frozen Box Head",
+      "serialNumber": 31733,
+      "collectibleItemId": "20143374-8ced-4060-a0b4-77129e19e388",
+      "collectibleItemInstanceId": "07796b34-aae4-4fb2-9d3e-4a99eb351118"
+    },
+    {
+      "assetId": 15044594273,
+      "assetName": "Horns Of Extreme Funs",
+      "serialNumber": 469,
+      "collectibleItemId": "17edb217-c59e-4788-b280-d40928c1bbad",
+      "collectibleItemInstanceId": "7f82b653-a489-461a-a00a-cd3e2d8841f2"
+    },
+    {
+      "assetId": 15167336784,
+      "assetName": "Witchy Giftbox",
+      "serialNumber": 315,
+      "collectibleItemId": "6e0ab271-6d11-48ed-90ea-c482dae248d5",
+      "collectibleItemInstanceId": "11838438-3645-4184-864f-28bf649dd349"
+    },
+    {
+      "assetId": 15171972260,
+      "assetName": "Lucky Vampiric Fedora",
+      "serialNumber": 310,
+      "collectibleItemId": "38eca9bd-1893-42ff-b30b-cc1b2b5a348f",
+      "collectibleItemInstanceId": "6c795cec-36e9-4178-980c-1510052d27ba"
+    },
+    {
+      "assetId": 15167341350,
+      "assetName": "Pumpkin Giftbox",
+      "serialNumber": 36,
+      "collectibleItemId": "95ef1bbf-96b1-4717-ae5d-11dee061b1a4",
+      "collectibleItemInstanceId": "f5438213-d177-4c84-9406-f38f1ce4fc56"
+    },
+    {
+      "assetId": 14908686641,
+      "assetName": "Tricorn Hat",
+      "serialNumber": 7100,
+      "collectibleItemId": "553d35e0-12d5-4eed-b4d7-2b807dc35dee",
+      "collectibleItemInstanceId": "61546cf6-30ef-462e-9241-66099431bf55"
+    },
+    {
+      "assetId": 15120595924,
+      "assetName": "Crown of royalty",
+      "serialNumber": 1,
+      "collectibleItemId": "272b816c-3298-4565-94f6-ff942e11e789",
+      "collectibleItemInstanceId": "287d9e1a-9aa0-4553-a06f-7cebece89d3c"
+    },
+    {
+      "assetId": 15152114082,
+      "assetName": "Halloween Death Liberace Mask",
+      "serialNumber": 422,
+      "collectibleItemId": "8c0ec084-a5ed-4c8a-88f1-784651eb0fca",
+      "collectibleItemInstanceId": "66cfcd3a-2d2a-428c-bb73-4c54e713578d"
+    },
+    {
+      "assetId": 15164011478,
+      "assetName": "Double Sunny Sunnies",
+      "serialNumber": 5264,
+      "collectibleItemId": "5a656104-a8d6-4732-8d2f-0a55b33e5cc1",
+      "collectibleItemInstanceId": "d0eb806d-e2a0-4641-812e-2a0c738356d5"
+    },
+    {
+      "assetId": 14892528951,
+      "assetName": "Nova Sky Warden Valkyrie",
+      "serialNumber": 418,
+      "collectibleItemId": "575d7aca-4209-4c0e-834d-2c8ad203b515",
+      "collectibleItemInstanceId": "70f5e3d9-61db-4343-ac9b-2475e922189c"
+    },
+    {
+      "assetId": 15167619165,
+      "assetName": "Fleshy Fedora",
+      "serialNumber": 31,
+      "collectibleItemId": "c9371db4-1fa4-4929-844b-5fd4147ecd04",
+      "collectibleItemInstanceId": "f397d8fc-c91e-4a67-ae64-845f5151f07a"
+    },
+    {
+      "assetId": 15112813309,
+      "assetName": "Durian Jack-O-Lantern Mask",
+      "serialNumber": 7827,
+      "collectibleItemId": "7f1758bc-5fb7-40d8-89c4-0c184acf1e3c",
+      "collectibleItemInstanceId": "b88ac77e-80b2-4eea-9de5-1f7f5594f02f"
+    },
+    {
+      "assetId": 15116654018,
+      "assetName": "Ghost Box Head",
+      "serialNumber": 35571,
+      "collectibleItemId": "c51b6e0d-3400-4e0b-b44c-2f4e7276bd02",
+      "collectibleItemInstanceId": "106c00c4-858d-40c3-858e-3ad6625e51d0"
     },
     {
       "assetId": 15301623655,
@@ -27,13 +125,6 @@
       "serialNumber": 11258,
       "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
       "collectibleItemInstanceId": "459fab86-eb9d-412e-a5c5-72428ce67b27"
-    },
-    {
-      "assetId": 15691398327,
-      "assetName": "Daybreak Hat",
-      "serialNumber": 238,
-      "collectibleItemId": "4e19d377-2a10-4cfd-90d6-9d21bc8ba548",
-      "collectibleItemInstanceId": "9eb373f4-cbf4-4953-8f24-379008c5c418"
     },
     {
       "assetId": 14847082069,
@@ -808,13 +899,6 @@
     {
       "assetId": 18912408152,
       "assetName": "✅ Yellow Ultimate Clockwork Headphones",
-      "serialNumber": 264,
-      "collectibleItemId": "13f44071-776a-44d9-a8ad-1a23152d97ee",
-      "collectibleItemInstanceId": "c865b121-54d3-4f2e-97c6-21ddb7e3568a"
-    },
-    {
-      "assetId": 18912408152,
-      "assetName": "✅ Yellow Ultimate Clockwork Headphones",
       "serialNumber": 265,
       "collectibleItemId": "13f44071-776a-44d9-a8ad-1a23152d97ee",
       "collectibleItemInstanceId": "cf59f004-a453-4604-bcf2-77030f18e708"
@@ -904,25 +988,11 @@
       "collectibleItemInstanceId": "41557823-54a4-4f1f-970c-9cf22ea890b1"
     },
     {
-      "assetId": 136379442243396,
-      "assetName": "Charmander Valkyrie",
-      "serialNumber": 6,
-      "collectibleItemId": "07532650-06b9-43da-a344-7523eb437ef2",
-      "collectibleItemInstanceId": "84391f1a-c397-48da-b751-d4ee41749a4a"
-    },
-    {
       "assetId": 18547368456,
       "assetName": "...",
       "serialNumber": 18,
       "collectibleItemId": "d5d13e78-55c5-41d7-aec8-d7e87b62c3e0",
       "collectibleItemInstanceId": "2d8a2c85-8ff8-4c8b-8a1e-b455040c01ef"
-    },
-    {
-      "assetId": 76739383355850,
-      "assetName": "Eevee Valkyrie",
-      "serialNumber": 8,
-      "collectibleItemId": "396eb690-51f8-4b14-864a-521bf4e06fac",
-      "collectibleItemInstanceId": "b01c4d49-964c-4e0f-8e64-c5e7f68e5166"
     },
     {
       "assetId": 111786426320773,
@@ -1021,13 +1091,6 @@
       "serialNumber": 29,
       "collectibleItemId": "e8568ae7-e12d-47fa-8d7d-d72f8cececef",
       "collectibleItemInstanceId": "5c68f7a0-af03-4fc4-bb97-d7fdb4f30dd2"
-    },
-    {
-      "assetId": 84577469433674,
-      "assetName": "Limited U Fedora",
-      "serialNumber": 24,
-      "collectibleItemId": "8fdc63d3-8f52-4ead-a422-12247705b2c5",
-      "collectibleItemInstanceId": "06e305fc-e07f-40ec-81d9-fac943df6a61"
     },
     {
       "assetId": 117910696061529,
@@ -14162,13 +14225,6 @@
       "collectibleItemInstanceId": "bdffff27-cade-4d8a-9eca-191fd38d8e1a"
     },
     {
-      "assetId": 108275853296993,
-      "assetName": "Mocha Lush Wavy Ombre Hair",
-      "serialNumber": 231,
-      "collectibleItemId": "e809e3cf-583a-4b10-8126-812ecc98cfb6",
-      "collectibleItemInstanceId": "39eea735-e798-47d0-b921-b03102df681b"
-    },
-    {
       "assetId": 135609008433434,
       "assetName": "Gyaru Rave Scene Pigtails",
       "serialNumber": 29,
@@ -23948,13 +24004,6 @@
       "collectibleItemInstanceId": "e99bc8a1-1aae-4f9a-b2f0-0d970d24ce6a"
     },
     {
-      "assetId": 15133673280,
-      "assetName": "Mushy Mushroom",
-      "serialNumber": 8,
-      "collectibleItemId": "184c999e-ba05-4669-ba17-1ad2101fe777",
-      "collectibleItemInstanceId": "0feaffc0-ebbc-4214-ac0e-1d41737a66bd"
-    },
-    {
       "assetId": 14891836541,
       "assetName": "Pancake Power Stack 5000",
       "serialNumber": 16997,
@@ -24620,13 +24669,6 @@
       "collectibleItemInstanceId": "146c989e-ba1e-4dc5-875c-91c35090ea94"
     },
     {
-      "assetId": 116709259577376,
-      "assetName": "Teto Sticker Pin",
-      "serialNumber": 190,
-      "collectibleItemId": "e92a33e6-b794-4b46-a080-9f8712b59f99",
-      "collectibleItemInstanceId": "f2e5e29b-3ce4-49c0-a003-c82d159cf445"
-    },
-    {
       "assetId": 14762384003,
       "assetName": "Silver Valkyrie Sword",
       "serialNumber": 415,
@@ -25017,13 +25059,6 @@
       "serialNumber": 574,
       "collectibleItemId": "f378ba0b-d0ca-4b64-9a23-147196571ad5",
       "collectibleItemInstanceId": "b85cfbbd-2df4-4a23-bd37-bf59b125ce7a"
-    },
-    {
-      "assetId": 18831503932,
-      "assetName": "Rose Peach Pink Fairy Wings",
-      "serialNumber": 38,
-      "collectibleItemId": "ab5caba0-1ad6-4989-b57c-5e720d532ff5",
-      "collectibleItemInstanceId": "fe18f75d-8351-4fc6-a161-cc6f81e1aa34"
     },
     {
       "assetId": 18823567944,
@@ -25418,5 +25453,5 @@
       "collectibleItemInstanceId": "92e4e461-4660-44fe-ac17-f6735560de3a"
     }
   ],
-  "ttl": 1778289036601
+  "ttl": 1778393238066
 }

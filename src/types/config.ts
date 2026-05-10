@@ -27,7 +27,9 @@ export interface Config {
     enable: boolean;
     default_price_no_competition: number;
     skip_on_sale: boolean;
+    skip_on_sale_persist: boolean;
     skip_serial: number[];
+    skip_assetId: number[];
     creator: {
       enable: boolean;
       skip_creator: number[];
@@ -40,5 +42,6 @@ export interface Config {
   developer: {
     enable: boolean;
     skip_comfirmation: boolean;
+    remove_latency_warning: boolean;
   };
 }

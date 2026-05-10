@@ -4,6 +4,22 @@ export interface User {
   displayName: string;
 }
 
+export type GroupedItem = {
+  assetId: number;
+  assetName: string;
+  found: number;
+};
+
+export interface inventoryFromFile {
+  data: {
+    assetId: number;
+    assetName: string;
+    serialNumber: number;
+    collectibleItemId: string;
+    collectibleItemInstanceId: string;
+  };
+}
+
 export interface CachedUser {
   roblox: User;
   ttl: number;
@@ -48,6 +64,7 @@ export interface EconomyData {
 
 export interface ResellData {
   skip?: boolean;
+  reason?: string;
   assetId: number;
   name: string;
   description: string;

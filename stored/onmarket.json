@@ -1,81 +1,5 @@
 [
   {
-    "assetId": 14575181536,
-    "name": "Crown Of Eggs",
-    "description": "FREE ITEM HERE: https://www.roblox.com/games/14236123211/FREE-LIMITED-PUNCH-Simulator",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "5a86ca80-1014-407a-b96d-92d886764b2c",
-    "collectibleProductId": "4b4eaeec-95f6-422c-8b2f-3ddb3c0385f8",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "116f11f3-0cae-41ae-b385-cadaca391a4b",
-      "CollectibleLowestAvailableResaleItemInstanceId": "9e63ca6-f99c-4ad4-ab07-a6f943afcf77",
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": true,
-      "TotalQuantity": 8000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 3050219391,
-      "Name": "Habit Games!",
-      "CreatorType": "Group",
-      "CreatorTargetId": 12860813,
-      "HasVerifiedBadge": true
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "19b4a34b-1671-4704-b1b5-fa42a20e3f7c",
-        "collectibleItemId": "5a86ca80-1014-407a-b96d-92d886764b2c",
-        "collectibleProductId": "45cf521e-c05e-4299-8a23-0c17b17f4d92",
-        "serialNumber": 7334,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
-  },
-  {
-    "assetId": 14272982720,
-    "name": "Paris Hilton Pink Headphones",
-    "description": "Sliv to Live!",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "3d21d44b-92bb-432d-803c-32477fb72d4d",
-    "collectibleProductId": "d9f64ff3-ab6b-472d-a004-e0fb3087f213",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "04210ff5-a655-4c5c-81b9-9b654914f5ea",
-      "CollectibleLowestAvailableResaleItemInstanceId": "f9e72218-c75c-4e5b-8bd9-98e1f3d21a0f",
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": false,
-      "TotalQuantity": 10000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 2956819152,
-      "Name": "Paris Hilton + 11:11 Media",
-      "CreatorType": "Group",
-      "CreatorTargetId": 12512251,
-      "HasVerifiedBadge": false
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "4d4d698a-48f7-4523-97cb-ee7ea1193390",
-        "collectibleItemId": "3d21d44b-92bb-432d-803c-32477fb72d4d",
-        "collectibleProductId": "eafe3bf0-abd6-4fa7-9f7a-9d6b3c433dbb",
-        "serialNumber": 4691,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
-  },
-  {
     "assetId": 14566190022,
     "name": "Splorp Plushie Hat",
     "description": "A blue Supercampus Splorp plushie hat ",
@@ -111,159 +35,8 @@
         "price": 0
       }
     ],
-    "skip": true
-  },
-  {
-    "assetId": 14361770112,
-    "name": "white room",
-    "description": "when you play white room for so long you become a white room www.roblox.com/games/14239271044",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "d70bb9a4-3e45-42d8-9bc6-0df3108aa0f0",
-    "collectibleProductId": "7f63512d-0a30-4f28-9014-a06eef75fcde",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 90,
-      "CollectibleLowestAvailableResaleProductId": "121aba32-b01e-4ae3-901f-34f103f766c3",
-      "CollectibleLowestAvailableResaleItemInstanceId": "26cfd7cf-1563-48ea-94e9-49c0a592ba54",
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": false,
-      "TotalQuantity": 10000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 4866055502,
-      "Name": "Color Rooms",
-      "CreatorType": "Group",
-      "CreatorTargetId": 32828484,
-      "HasVerifiedBadge": false
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "2925267f-4995-40fb-ab51-95fd7234ae84",
-        "collectibleItemId": "d70bb9a4-3e45-42d8-9bc6-0df3108aa0f0",
-        "collectibleProductId": "87552163-569b-4dac-a681-c67ff235b08e",
-        "serialNumber": 3846,
-        "saleState": "OnSale",
-        "price": 90
-      }
-    ],
-    "skip": false
-  },
-  {
-    "assetId": 14401327884,
-    "name": "Yellow Apple Antlers",
-    "description": "Apple Makes My Tongue Hurt",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 1,
-    "collectibleItemId": "36ee052e-9ca5-4f00-b2a1-6b44f9161e1a",
-    "collectibleProductId": "98358644-558c-4056-a22f-4b4d3c7e14b4",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 180,
-      "CollectibleLowestAvailableResaleProductId": "1ad91f37-8715-49bc-8853-9b519d1145ee",
-      "CollectibleLowestAvailableResaleItemInstanceId": "292e2ead-206e-489e-bbf5-3ff58473ffdd",
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": false,
-      "TotalQuantity": 500,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 1375187027,
-      "Name": "Aiden Studio'z",
-      "CreatorType": "Group",
-      "CreatorTargetId": 5377342,
-      "HasVerifiedBadge": false
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "292e2ead-206e-489e-bbf5-3ff58473ffdd",
-        "collectibleItemId": "36ee052e-9ca5-4f00-b2a1-6b44f9161e1a",
-        "collectibleProductId": "1ad91f37-8715-49bc-8853-9b519d1145ee",
-        "serialNumber": 174,
-        "saleState": "OnSale",
-        "price": 180
-      }
-    ],
-    "skip": false
-  },
-  {
-    "assetId": 14565856635,
-    "name": "Paris Hilton Purple Crystal Crown",
-    "description": "Loves it <3",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "daf07807-d53c-40f1-95b5-29641ef11a6a",
-    "collectibleProductId": "4f292088-5045-4607-8a8f-71ebb9aee27d",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "1adfe9f0-b96e-47ad-8d01-17fb0a45717a",
-      "CollectibleLowestAvailableResaleItemInstanceId": "3cdcb7a6-724d-4fb8-a62e-fb5c46c8a4da",
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": false,
-      "TotalQuantity": 5000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 2956819152,
-      "Name": "Paris Hilton + 11:11 Media",
-      "CreatorType": "Group",
-      "CreatorTargetId": 12512251,
-      "HasVerifiedBadge": false
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "3e898472-7426-48dc-a311-ef37d8ad9fe6",
-        "collectibleItemId": "daf07807-d53c-40f1-95b5-29641ef11a6a",
-        "collectibleProductId": "80b9e28d-44ce-43a7-86ab-0123d6148e10",
-        "serialNumber": 4157,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
-  },
-  {
-    "assetId": 14536570194,
-    "name": "Nexus Crown",
-    "description": "Complete the FREE UGC Quest in Anime Punch Wall Simulator! Only 1,000 Stock!",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "398d6d93-636f-4394-8ea2-0e918fdb526e",
-    "collectibleProductId": "e0ebf458-a52a-4c47-a8fa-452a97f2e11f",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "07ee9f06-5676-486d-87b1-d8dc1948e713",
-      "CollectibleLowestAvailableResaleItemInstanceId": "bc9608b0-765e-4ae1-ae25-a0184142452a",
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": false,
-      "TotalQuantity": 1000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 4444181010,
-      "Name": "Anime Reborn",
-      "CreatorType": "Group",
-      "CreatorTargetId": 17249072,
-      "HasVerifiedBadge": false
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "bc9608b0-765e-4ae1-ae25-a0184142452a",
-        "collectibleItemId": "398d6d93-636f-4394-8ea2-0e918fdb526e",
-        "collectibleProductId": "07ee9f06-5676-486d-87b1-d8dc1948e713",
-        "serialNumber": 587,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 14782856085,
@@ -301,7 +74,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 14794240308,
@@ -339,7 +113,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 14859714401,
@@ -377,7 +152,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 14945571749,
@@ -415,7 +191,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 14951082333,
@@ -453,7 +230,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15069000140,
@@ -491,7 +269,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15051175080,
@@ -529,45 +308,8 @@
         "price": 0
       }
     ],
-    "skip": true
-  },
-  {
-    "assetId": 14979134327,
-    "name": "Frozen Box Head",
-    "description": "Now you’ve got the coolest head in Roblox.",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "20143374-8ced-4060-a0b4-77129e19e388",
-    "collectibleProductId": "bc63ff1e-d799-43ad-a77f-9e155f9a4279",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": null,
-      "CollectibleLowestAvailableResaleProductId": null,
-      "CollectibleLowestAvailableResaleItemInstanceId": null,
-      "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": true,
-      "TotalQuantity": 85000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 3806808553,
-      "Name": "Amazon",
-      "CreatorType": "Group",
-      "CreatorTargetId": 15680368,
-      "HasVerifiedBadge": true
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "07796b34-aae4-4fb2-9d3e-4a99eb351118",
-        "collectibleItemId": "20143374-8ced-4060-a0b4-77129e19e388",
-        "collectibleProductId": "b0f5af84-ab62-489a-97bd-3da589271f95",
-        "serialNumber": 31733,
-        "saleState": "OffSale",
-        "price": 0
-      }
-    ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15044594273,
@@ -580,7 +322,7 @@
     "collectibleItemId": "17edb217-c59e-4788-b280-d40928c1bbad",
     "collectibleProductId": "725c4e80-5fad-4873-a1b1-3b893d598f74",
     "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 700,
+      "CollectibleLowestResalePrice": 649,
       "CollectibleLowestAvailableResaleProductId": "79683f0d-ba7d-47fb-86c5-5a350c547e52",
       "CollectibleLowestAvailableResaleItemInstanceId": "96cdee5e-3a79-422b-9c6c-9a2bc4548517",
       "CollectibleQuantityLimitPerUser": 1,
@@ -602,10 +344,11 @@
         "collectibleProductId": "caa0f468-5c2c-453f-9c7a-c53520e55d9a",
         "serialNumber": 469,
         "saleState": "OnSale",
-        "price": 721
+        "price": 691
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15167336784,
@@ -643,7 +386,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15171972260,
@@ -681,7 +425,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15167341350,
@@ -719,7 +464,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 14908686641,
@@ -757,7 +503,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15120595924,
@@ -795,7 +542,8 @@
         "price": 7500
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Item was remove because of serial configuration"
   },
   {
     "assetId": 15152114082,
@@ -833,7 +581,8 @@
         "price": 90
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15164011478,
@@ -871,7 +620,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 14892528951,
@@ -884,7 +634,7 @@
     "collectibleItemId": "575d7aca-4209-4c0e-834d-2c8ad203b515",
     "collectibleProductId": "27ef6c76-c4ab-4f24-83b5-93c4d3cfb63e",
     "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 179,
+      "CollectibleLowestResalePrice": 175,
       "CollectibleLowestAvailableResaleProductId": "299ebfd3-3c4b-48a2-97fd-405466a8d871",
       "CollectibleLowestAvailableResaleItemInstanceId": "70f5e3d9-61db-4343-ac9b-2475e922189c",
       "CollectibleQuantityLimitPerUser": 1,
@@ -906,10 +656,11 @@
         "collectibleProductId": "299ebfd3-3c4b-48a2-97fd-405466a8d871",
         "serialNumber": 418,
         "saleState": "OnSale",
-        "price": 179
+        "price": 175
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15167619165,
@@ -947,83 +698,242 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
-    "assetId": 15112813309,
-    "name": "Durian Jack-O-Lantern Mask",
-    "description": "Thinking of carving pumpkins this year? Instead, carve one of Singapore's delicacies, the Durian Fruit!",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 41851,
-    "collectibleItemId": "7f1758bc-5fb7-40d8-89c4-0c184acf1e3c",
-    "collectibleProductId": "ff6895f9-ae60-4c1f-bbfe-52f14b030cd7",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": null,
-      "CollectibleLowestAvailableResaleProductId": null,
-      "CollectibleLowestAvailableResaleItemInstanceId": null,
-      "CollectibleQuantityLimitPerUser": null,
-      "IsForSale": true,
-      "TotalQuantity": 50000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 4344893919,
-      "Name": "VisitSingapore",
-      "CreatorType": "Group",
-      "CreatorTargetId": 17017903,
-      "HasVerifiedBadge": false
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "b88ac77e-80b2-4eea-9de5-1f7f5594f02f",
-        "collectibleItemId": "7f1758bc-5fb7-40d8-89c4-0c184acf1e3c",
-        "collectibleProductId": "f2532b3a-1f3f-4a9b-9baf-3f9486a55a24",
-        "serialNumber": 7827,
-        "saleState": "OffSale",
-        "price": 0
-      }
-    ],
-    "skip": true
-  },
-  {
-    "assetId": 15116654018,
-    "name": "Ghost Box Head",
-    "description": "Some people have ghosts under their bed. Mine's in my head.",
+    "assetId": 14361770112,
+    "name": "white room",
+    "description": "when you play white room for so long you become a white room www.roblox.com/games/14239271044",
     "assetTypeId": 8,
     "priceInRobux": 0,
     "sales": 0,
     "remaining": 0,
-    "collectibleItemId": "c51b6e0d-3400-4e0b-b44c-2f4e7276bd02",
-    "collectibleProductId": "c0b07c25-2a41-4216-8fde-3016dbd9f7c4",
+    "collectibleItemId": "d70bb9a4-3e45-42d8-9bc6-0df3108aa0f0",
+    "collectibleProductId": "7f63512d-0a30-4f28-9014-a06eef75fcde",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 90,
+      "CollectibleLowestAvailableResaleProductId": "121aba32-b01e-4ae3-901f-34f103f766c3",
+      "CollectibleLowestAvailableResaleItemInstanceId": "26cfd7cf-1563-48ea-94e9-49c0a592ba54",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": false,
+      "TotalQuantity": 10000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 4866055502,
+      "Name": "Color Rooms",
+      "CreatorType": "Group",
+      "CreatorTargetId": 32828484,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "2925267f-4995-40fb-ab51-95fd7234ae84",
+        "collectibleItemId": "d70bb9a4-3e45-42d8-9bc6-0df3108aa0f0",
+        "collectibleProductId": "87552163-569b-4dac-a681-c67ff235b08e",
+        "serialNumber": 3846,
+        "saleState": "OnSale",
+        "price": 90
+      }
+    ],
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 14401327884,
+    "name": "Yellow Apple Antlers",
+    "description": "Apple Makes My Tongue Hurt",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 1,
+    "collectibleItemId": "36ee052e-9ca5-4f00-b2a1-6b44f9161e1a",
+    "collectibleProductId": "98358644-558c-4056-a22f-4b4d3c7e14b4",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 172,
+      "CollectibleLowestAvailableResaleProductId": "1ad91f37-8715-49bc-8853-9b519d1145ee",
+      "CollectibleLowestAvailableResaleItemInstanceId": "292e2ead-206e-489e-bbf5-3ff58473ffdd",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": false,
+      "TotalQuantity": 500,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 1375187027,
+      "Name": "Aiden Studio'z",
+      "CreatorType": "Group",
+      "CreatorTargetId": 5377342,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "292e2ead-206e-489e-bbf5-3ff58473ffdd",
+        "collectibleItemId": "36ee052e-9ca5-4f00-b2a1-6b44f9161e1a",
+        "collectibleProductId": "1ad91f37-8715-49bc-8853-9b519d1145ee",
+        "serialNumber": 174,
+        "saleState": "OnSale",
+        "price": 172
+      }
+    ],
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 14565856635,
+    "name": "Paris Hilton Purple Crystal Crown",
+    "description": "Loves it <3",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "daf07807-d53c-40f1-95b5-29641ef11a6a",
+    "collectibleProductId": "4f292088-5045-4607-8a8f-71ebb9aee27d",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "1adfe9f0-b96e-47ad-8d01-17fb0a45717a",
+      "CollectibleLowestAvailableResaleItemInstanceId": "3cdcb7a6-724d-4fb8-a62e-fb5c46c8a4da",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": false,
+      "TotalQuantity": 5000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 2956819152,
+      "Name": "Paris Hilton + 11:11 Media",
+      "CreatorType": "Group",
+      "CreatorTargetId": 12512251,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "3e898472-7426-48dc-a311-ef37d8ad9fe6",
+        "collectibleItemId": "daf07807-d53c-40f1-95b5-29641ef11a6a",
+        "collectibleProductId": "80b9e28d-44ce-43a7-86ab-0123d6148e10",
+        "serialNumber": 4157,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 14536570194,
+    "name": "Nexus Crown",
+    "description": "Complete the FREE UGC Quest in Anime Punch Wall Simulator! Only 1,000 Stock!",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "398d6d93-636f-4394-8ea2-0e918fdb526e",
+    "collectibleProductId": "e0ebf458-a52a-4c47-a8fa-452a97f2e11f",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "07ee9f06-5676-486d-87b1-d8dc1948e713",
+      "CollectibleLowestAvailableResaleItemInstanceId": "bc9608b0-765e-4ae1-ae25-a0184142452a",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": false,
+      "TotalQuantity": 1000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 4444181010,
+      "Name": "Anime Reborn",
+      "CreatorType": "Group",
+      "CreatorTargetId": 17249072,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "bc9608b0-765e-4ae1-ae25-a0184142452a",
+        "collectibleItemId": "398d6d93-636f-4394-8ea2-0e918fdb526e",
+        "collectibleProductId": "07ee9f06-5676-486d-87b1-d8dc1948e713",
+        "serialNumber": 587,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 14575181536,
+    "name": "Crown Of Eggs",
+    "description": "FREE ITEM HERE: https://www.roblox.com/games/14236123211/FREE-LIMITED-PUNCH-Simulator",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "5a86ca80-1014-407a-b96d-92d886764b2c",
+    "collectibleProductId": "4b4eaeec-95f6-422c-8b2f-3ddb3c0385f8",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "116f11f3-0cae-41ae-b385-cadaca391a4b",
+      "CollectibleLowestAvailableResaleItemInstanceId": "9e63ca6d-f99c-4ad4-ab07-a6f943afcf77",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": true,
+      "TotalQuantity": 8000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 3050219391,
+      "Name": "Habit Games!",
+      "CreatorType": "Group",
+      "CreatorTargetId": 12860813,
+      "HasVerifiedBadge": true
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "19b4a34b-1671-4704-b1b5-fa42a20e3f7c",
+        "collectibleItemId": "5a86ca80-1014-407a-b96d-92d886764b2c",
+        "collectibleProductId": "45cf521e-c05e-4299-8a23-0c17b17f4d92",
+        "serialNumber": 7334,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 14272982720,
+    "name": "Paris Hilton Pink Headphones",
+    "description": "Sliv to Live!",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "3d21d44b-92bb-432d-803c-32477fb72d4d",
+    "collectibleProductId": "d9f64ff3-ab6b-472d-a004-e0fb3087f213",
     "collectiblesItemDetails": {
       "CollectibleLowestResalePrice": null,
       "CollectibleLowestAvailableResaleProductId": null,
       "CollectibleLowestAvailableResaleItemInstanceId": null,
       "CollectibleQuantityLimitPerUser": 1,
-      "IsForSale": true,
-      "TotalQuantity": 85000,
+      "IsForSale": false,
+      "TotalQuantity": 10000,
       "IsLimited": true
     },
     "creator": {
-      "Id": 3806808553,
-      "Name": "Amazon",
+      "Id": 2956819152,
+      "Name": "Paris Hilton + 11:11 Media",
       "CreatorType": "Group",
-      "CreatorTargetId": 15680368,
-      "HasVerifiedBadge": true
+      "CreatorTargetId": 12512251,
+      "HasVerifiedBadge": false
     },
     "itemInstances": [
       {
-        "collectibleInstanceId": "106c00c4-858d-40c3-858e-3ad6625e51d0",
-        "collectibleItemId": "c51b6e0d-3400-4e0b-b44c-2f4e7276bd02",
-        "collectibleProductId": "0bb74718-63bc-4b2a-a524-680d1c277e03",
-        "serialNumber": 35571,
-        "saleState": "OffSale",
-        "price": 0
+        "collectibleInstanceId": "4d4d698a-48f7-4523-97cb-ee7ea1193390",
+        "collectibleItemId": "3d21d44b-92bb-432d-803c-32477fb72d4d",
+        "collectibleProductId": "eafe3bf0-abd6-4fa7-9f7a-9d6b3c433dbb",
+        "serialNumber": 4691,
+        "saleState": "OnSale",
+        "price": 95
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15290760324,
@@ -1061,7 +971,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15301085347,
@@ -1099,7 +1010,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15147528267,
@@ -1137,7 +1049,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15332948048,
@@ -1150,9 +1063,9 @@
     "collectibleItemId": "a51ff566-f45d-41a3-bb71-15346c12cce4",
     "collectibleProductId": "1d15cfee-be4c-43fc-a346-8ec2cec11931",
     "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 8585,
-      "CollectibleLowestAvailableResaleProductId": "5b2fe605-dbaa-4d2e-9d25-ef24f20cdf45",
-      "CollectibleLowestAvailableResaleItemInstanceId": "08519b64-e562-4765-80d0-721d06c9ee7d",
+      "CollectibleLowestResalePrice": 6666,
+      "CollectibleLowestAvailableResaleProductId": "03b3350f-503c-48b2-a62c-2f3395dcc577",
+      "CollectibleLowestAvailableResaleItemInstanceId": "f2b41bda-057e-4a03-9333-f1a584e13c90",
       "CollectibleQuantityLimitPerUser": 1,
       "IsForSale": true,
       "TotalQuantity": 50,
@@ -1172,10 +1085,11 @@
         "collectibleProductId": "5b2fe605-dbaa-4d2e-9d25-ef24f20cdf45",
         "serialNumber": 14,
         "saleState": "OnSale",
-        "price": 8585
+        "price": 8413
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15318525554,
@@ -1213,7 +1127,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15120958796,
@@ -1251,7 +1166,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15116332295,
@@ -1289,7 +1205,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15380968481,
@@ -1327,7 +1244,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15116335020,
@@ -1340,9 +1258,9 @@
     "collectibleItemId": "09fff89b-4ffc-4750-843a-a829c2244ce1",
     "collectibleProductId": "92be2bc8-ba54-4e8d-aec9-d455e272f473",
     "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "03625425-e909-462e-9f6a-3088db59bc83",
-      "CollectibleLowestAvailableResaleItemInstanceId": "3c5a3f03-07f7-440c-a331-2e2a1170689f",
+      "CollectibleLowestResalePrice": null,
+      "CollectibleLowestAvailableResaleProductId": null,
+      "CollectibleLowestAvailableResaleItemInstanceId": null,
       "CollectibleQuantityLimitPerUser": 1,
       "IsForSale": false,
       "TotalQuantity": 39267,
@@ -1365,7 +1283,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15420948612,
@@ -1403,7 +1322,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15431171982,
@@ -1441,7 +1361,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15301623655,
@@ -1487,145 +1408,8 @@
         "price": 95
       }
     ],
-    "skip": false
-  },
-  {
-    "assetId": 15301623655,
-    "name": "e.l.f. Ears",
-    "description": "Literal e.l.f. ears. You’re welcome.",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-    "collectibleProductId": "8b0e70fb-a0c7-46cd-a630-3c245500a6d6",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "665db6cd-0d62-4f9e-a9be-d2d5cbc1107a",
-      "CollectibleLowestAvailableResaleItemInstanceId": "687c069f-5af6-4941-8884-8a1abb07aa91",
-      "CollectibleQuantityLimitPerUser": 30,
-      "IsForSale": true,
-      "TotalQuantity": 30000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 4018608336,
-      "Name": "e.l.f. UP!",
-      "CreatorType": "Group",
-      "CreatorTargetId": 16231884,
-      "HasVerifiedBadge": true
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "aa515b24-8f9d-47d7-bb99-fd7f405bc848",
-        "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-        "collectibleProductId": "c6622289-95d8-49cc-9697-b75040f14ee3",
-        "serialNumber": 11192,
-        "saleState": "OnSale",
-        "price": 95
-      },
-      {
-        "collectibleInstanceId": "459fab86-eb9d-412e-a5c5-72428ce67b27",
-        "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-        "collectibleProductId": "627d89d0-8b4d-4e77-98ac-c68354c02beb",
-        "serialNumber": 11258,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
-  },
-  {
-    "assetId": 15301623655,
-    "name": "e.l.f. Ears",
-    "description": "Literal e.l.f. ears. You’re welcome.",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-    "collectibleProductId": "8b0e70fb-a0c7-46cd-a630-3c245500a6d6",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "665db6cd-0d62-4f9e-a9be-d2d5cbc1107a",
-      "CollectibleLowestAvailableResaleItemInstanceId": "687c069f-5af6-4941-8884-8a1abb07aa91",
-      "CollectibleQuantityLimitPerUser": 30,
-      "IsForSale": true,
-      "TotalQuantity": 30000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 4018608336,
-      "Name": "e.l.f. UP!",
-      "CreatorType": "Group",
-      "CreatorTargetId": 16231884,
-      "HasVerifiedBadge": true
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "aa515b24-8f9d-47d7-bb99-fd7f405bc848",
-        "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-        "collectibleProductId": "c6622289-95d8-49cc-9697-b75040f14ee3",
-        "serialNumber": 11192,
-        "saleState": "OnSale",
-        "price": 95
-      },
-      {
-        "collectibleInstanceId": "459fab86-eb9d-412e-a5c5-72428ce67b27",
-        "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-        "collectibleProductId": "627d89d0-8b4d-4e77-98ac-c68354c02beb",
-        "serialNumber": 11258,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
-  },
-  {
-    "assetId": 15301623655,
-    "name": "e.l.f. Ears",
-    "description": "Literal e.l.f. ears. You’re welcome.",
-    "assetTypeId": 8,
-    "priceInRobux": 0,
-    "sales": 0,
-    "remaining": 0,
-    "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-    "collectibleProductId": "8b0e70fb-a0c7-46cd-a630-3c245500a6d6",
-    "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 95,
-      "CollectibleLowestAvailableResaleProductId": "665db6cd-0d62-4f9e-a9be-d2d5cbc1107a",
-      "CollectibleLowestAvailableResaleItemInstanceId": "687c069f-5af6-4941-8884-8a1abb07aa91",
-      "CollectibleQuantityLimitPerUser": 30,
-      "IsForSale": true,
-      "TotalQuantity": 30000,
-      "IsLimited": true
-    },
-    "creator": {
-      "Id": 4018608336,
-      "Name": "e.l.f. UP!",
-      "CreatorType": "Group",
-      "CreatorTargetId": 16231884,
-      "HasVerifiedBadge": true
-    },
-    "itemInstances": [
-      {
-        "collectibleInstanceId": "aa515b24-8f9d-47d7-bb99-fd7f405bc848",
-        "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-        "collectibleProductId": "c6622289-95d8-49cc-9697-b75040f14ee3",
-        "serialNumber": 11192,
-        "saleState": "OnSale",
-        "price": 95
-      },
-      {
-        "collectibleInstanceId": "459fab86-eb9d-412e-a5c5-72428ce67b27",
-        "collectibleItemId": "d8043655-a612-4d79-90fd-8979f2abbe1d",
-        "collectibleProductId": "627d89d0-8b4d-4e77-98ac-c68354c02beb",
-        "serialNumber": 11258,
-        "saleState": "OnSale",
-        "price": 95
-      }
-    ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15560727508,
@@ -1638,7 +1422,7 @@
     "collectibleItemId": "9efa59e3-de4f-4488-91f4-79a7b6d63f3b",
     "collectibleProductId": "b9b78314-a6dc-4df0-a695-b886eb2a4078",
     "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 270,
+      "CollectibleLowestResalePrice": 264,
       "CollectibleLowestAvailableResaleProductId": "fa93eaaa-ca9e-4d99-a845-371f2fa0bed2",
       "CollectibleLowestAvailableResaleItemInstanceId": "47c49e81-0edf-4c2d-88af-20d5812df7fa",
       "CollectibleQuantityLimitPerUser": 1,
@@ -1660,10 +1444,11 @@
         "collectibleProductId": "fa93eaaa-ca9e-4d99-a845-371f2fa0bed2",
         "serialNumber": 134,
         "saleState": "OnSale",
-        "price": 270
+        "price": 264
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15432852523,
@@ -1701,7 +1486,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15577028772,
@@ -1739,7 +1525,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15577717681,
@@ -1777,7 +1564,8 @@
         "price": 90
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15505955757,
@@ -1815,7 +1603,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15600860551,
@@ -1853,7 +1642,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15450607748,
@@ -1891,7 +1681,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15610146209,
@@ -1929,7 +1720,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Item was remove because of serial configuration"
   },
   {
     "assetId": 15610790794,
@@ -1967,7 +1759,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15544101190,
@@ -2005,7 +1798,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15634149615,
@@ -2043,7 +1837,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15634203098,
@@ -2081,7 +1876,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15625624384,
@@ -2119,7 +1915,8 @@
         "price": 0
       }
     ],
-    "skip": true
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
   },
   {
     "assetId": 15667847129,
@@ -2157,7 +1954,8 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15647876098,
@@ -2170,7 +1968,7 @@
     "collectibleItemId": "752ecb95-139a-499c-a9e9-049436e34062",
     "collectibleProductId": "6161dd75-536e-4ec7-86b9-01b2a85f7b38",
     "collectiblesItemDetails": {
-      "CollectibleLowestResalePrice": 168,
+      "CollectibleLowestResalePrice": 164,
       "CollectibleLowestAvailableResaleProductId": "6b32b341-e97f-4730-9dfa-a30435987b42",
       "CollectibleLowestAvailableResaleItemInstanceId": "9dbe89af-ed5a-4bf1-bf0c-f7f1d27290a1",
       "CollectibleQuantityLimitPerUser": 1,
@@ -2192,10 +1990,11 @@
         "collectibleProductId": "6b32b341-e97f-4730-9dfa-a30435987b42",
         "serialNumber": 295,
         "saleState": "OnSale",
-        "price": 168
+        "price": 164
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
   },
   {
     "assetId": 15633244336,
@@ -2233,6 +2032,202 @@
         "price": 95
       }
     ],
-    "skip": false
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 15691398327,
+    "name": "Daybreak Hat",
+    "description": "FREE ITEM HERE: https://www.roblox.com/games/15234998219/NEW-Farmer-Simulator",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "4e19d377-2a10-4cfd-90d6-9d21bc8ba548",
+    "collectibleProductId": "18a7ef5f-b852-4afd-af16-13a2663c31f3",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "237e87f0-0155-4478-b0c3-d90b82ba0f0b",
+      "CollectibleLowestAvailableResaleItemInstanceId": "a2f2c9c8-7798-4517-bb44-b689b971e3a5",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": true,
+      "TotalQuantity": 1000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 3050219391,
+      "Name": "Habit Games!",
+      "CreatorType": "Group",
+      "CreatorTargetId": 12860813,
+      "HasVerifiedBadge": true
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "9eb373f4-cbf4-4953-8f24-379008c5c418",
+        "collectibleItemId": "4e19d377-2a10-4cfd-90d6-9d21bc8ba548",
+        "collectibleProductId": "ec46a7e0-6c15-4a1c-8102-0aa04161d2ff",
+        "serialNumber": 238,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": true,
+    "reason": "Item was skipped because item was already on-sale"
+  },
+  {
+    "assetId": 14566190022,
+    "name": "Splorp Plushie Hat",
+    "description": "A blue Supercampus Splorp plushie hat ",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "dcb8aa76-b9a5-4686-9002-6d20cdc7321b",
+    "collectibleProductId": "43bfdc52-7165-449f-ad15-cf096377fc1d",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": null,
+      "CollectibleLowestAvailableResaleProductId": null,
+      "CollectibleLowestAvailableResaleItemInstanceId": null,
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": false,
+      "TotalQuantity": 10000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 4210795170,
+      "Name": "PoweredByWalmart",
+      "CreatorType": "Group",
+      "CreatorTargetId": 16711400,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "68b433c5-37a9-4529-9757-509a1c7184dc",
+        "collectibleItemId": "dcb8aa76-b9a5-4686-9002-6d20cdc7321b",
+        "collectibleProductId": "0562752f-924d-403b-9475-b2791310ac22",
+        "serialNumber": 6386,
+        "saleState": "OffSale",
+        "price": 0
+      }
+    ],
+    "skip": true,
+    "reason": "Skipping the item because this item is not resellable"
+  },
+  {
+    "assetId": 14782856085,
+    "name": "Cystal Helm",
+    "description": "Earn in Knife Wars! https://www.roblox.com/games/13478591107/Knife-Wars",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "59c03def-8c79-4d28-81f3-bb03a11542e6",
+    "collectibleProductId": "a47e3110-5697-4590-85c7-ca5c74558a07",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "00b74dcc-9d6d-44ff-b96f-6f1af38f085b",
+      "CollectibleLowestAvailableResaleItemInstanceId": "941fbc2d-0f17-4964-b18e-b27dd571478d",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": false,
+      "TotalQuantity": 5000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 3429666348,
+      "Name": "48h Games",
+      "CreatorType": "Group",
+      "CreatorTargetId": 14461694,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "f2bfc6a8-fa8f-426c-a250-27016f7b9610",
+        "collectibleItemId": "59c03def-8c79-4d28-81f3-bb03a11542e6",
+        "collectibleProductId": "547b20fd-6223-4253-b663-81690247fa1f",
+        "serialNumber": 4155,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": false,
+    "reason": ""
+  },
+  {
+    "assetId": 14794240308,
+    "name": "Mushroom Hat",
+    "description": "Mushroom hat\nEarn this for free here: \nhttps://www.roblox.com/games/8305160617/Last-To-Leave",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "27213223-d4d8-410b-bfc0-e0c87fc16ee2",
+    "collectibleProductId": "30a1c10a-d673-430e-b672-c03b1e378773",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "0aa42341-dca4-45b9-acc7-d390f89f2c04",
+      "CollectibleLowestAvailableResaleItemInstanceId": "b9bd4c5a-e63c-4490-8e11-328e7cca4b03",
+      "CollectibleQuantityLimitPerUser": 2,
+      "IsForSale": true,
+      "TotalQuantity": 4000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 312438527,
+      "Name": "Boomerang Studios",
+      "CreatorType": "Group",
+      "CreatorTargetId": 3265270,
+      "HasVerifiedBadge": true
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "4cb26b6b-50b7-4222-84d7-1ff4e9931193",
+        "collectibleItemId": "27213223-d4d8-410b-bfc0-e0c87fc16ee2",
+        "collectibleProductId": "ef7eceb4-c3d8-41b7-9814-292ba0db43b8",
+        "serialNumber": 1357,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": false,
+    "reason": ""
+  },
+  {
+    "assetId": 14859714401,
+    "name": "Waffle Beanie",
+    "description": "Codes provided on WaffleTrades channel!\n\nRedeem here!\nhttps://www.roblox.com/games/14842238611/UGC-Limited-Codes\n\nJoin our group!\nhttps://www.roblox.com/groups/14511880/Waffles-UGC#!/about",
+    "assetTypeId": 8,
+    "priceInRobux": 0,
+    "sales": 0,
+    "remaining": 0,
+    "collectibleItemId": "5ca309dd-28c2-46f1-8ebb-22b725d69e8b",
+    "collectibleProductId": "dee8cbba-3085-44a8-92ef-af40049bb6bb",
+    "collectiblesItemDetails": {
+      "CollectibleLowestResalePrice": 95,
+      "CollectibleLowestAvailableResaleProductId": "2308dc9e-4b34-4409-9e75-105b4898512a",
+      "CollectibleLowestAvailableResaleItemInstanceId": "8743c88d-f05e-4a76-a175-fd25c6d383f3",
+      "CollectibleQuantityLimitPerUser": 1,
+      "IsForSale": true,
+      "TotalQuantity": 10000,
+      "IsLimited": true
+    },
+    "creator": {
+      "Id": 3443686803,
+      "Name": "Waffle's UGC",
+      "CreatorType": "Group",
+      "CreatorTargetId": 14511880,
+      "HasVerifiedBadge": false
+    },
+    "itemInstances": [
+      {
+        "collectibleInstanceId": "f01be62f-f642-43c5-9b94-1be36f7ad727",
+        "collectibleItemId": "5ca309dd-28c2-46f1-8ebb-22b725d69e8b",
+        "collectibleProductId": "a51afd8f-005c-4e67-8670-0fb617176113",
+        "serialNumber": 2948,
+        "saleState": "OnSale",
+        "price": 95
+      }
+    ],
+    "skip": false,
+    "reason": ""
   }
 ]

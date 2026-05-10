@@ -25,6 +25,7 @@ const retrieveOnmarket = async (): Promise<ResellData[]> => {
 const appendOnmarket = async (
   item: ResellData,
   skip: boolean = false,
+  msg: string = "",
 ): Promise<void> => {
   try {
     devmodelog("[appendOnmarket] > appending item");
@@ -38,6 +39,7 @@ const appendOnmarket = async (
     parsed.push({
       ...item,
       skip,
+      reason: msg,
     });
 
     await fs.writeFile(onmarket, JSON.stringify(parsed, null, 2));
@@ -46,12 +48,12 @@ const appendOnmarket = async (
   }
 };
 
-const removeFromInventory = async (item: any, skip: boolean): Promise<void> => {
+const removeFromInventory = async (item: any, skip: boolean, msg?: string, instanceId?: string): Promise<void> => {
   try {
-    const instanceId = item.itemInstances[0].collectibleInstanceId;
-    if (!instanceId) return;
+    const id = instanceId ?? item.itemInstances[0]?.collectibleInstanceId;
+    if (!id) return;
 
-    devmodelog(`[removeFromInventory] > removing ${instanceId}`);
+    devmodelog(`[removeFromInventory] > removing ${id}`);
 
     const raw = await fs
       .readFile(inventoryPath, "utf-8")
@@ -60,12 +62,12 @@ const removeFromInventory = async (item: any, skip: boolean): Promise<void> => {
     const parsed = JSON.parse(raw);
 
     parsed.data = (parsed.data || []).filter(
-      (inv: CollectibleItem) => inv.collectibleItemInstanceId !== instanceId,
+      (inv: CollectibleItem) => inv.collectibleItemInstanceId !== id,
     );
 
     parsed.ttl = Date.now();
 
-    await appendOnmarket(item, skip);
+    await appendOnmarket(item, skip, msg);
     await fs.writeFile(inventoryPath, JSON.stringify(parsed, null, 2));
   } catch (err) {
     error(`Failed to remove from inventory: ${err}`);
@@ -91,15 +93,21 @@ const retrieveInventory = async (): Promise<InventoryFile> => {
   }
 };
 
+
 const appendInventory = async (items: CollectibleItem[]): Promise<void> => {
-  devmodelog(`[appendInventory] > adding ${items.length} items`);
+  devmodelog(`[appendInventory] > rewriting ${items.length} items`);
 
-  const raw = await retrieveInventory();
-
-  raw.data.push(...items);
-  raw.ttl = Date.now();
-
-  await fs.writeFile(inventoryPath, JSON.stringify(raw, null, 2));
+  await fs.writeFile(
+    inventoryPath,
+    JSON.stringify(
+      {
+        data: items,
+        ttl: Date.now(),
+      },
+      null,
+      2,
+    ),
+  );
 };
 
 const retrieveUserFile = async (): Promise<Client> => {

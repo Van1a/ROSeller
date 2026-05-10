@@ -1,10 +1,26 @@
-## Patch Notes
+# Patch Notes
 
-###  Fixed
-- Fixed the messy output from ratelimit
+## Fixed
+- Fixed messy output caused by rate limiting.
 
-### New:
-- Added latency check, If your latency hit 1000 a custom output will appear saying that ""
+## New
 
-###  Improvements
-- Optimized API calls to reduce unnecessary requests and improve overall performance and response time.
+### Latency warning
+A warning now appears when response latency exceeds 1000ms to let you know responses may slow down. Can be disabled in developer settings.
+
+### Webhook notifier improvements
+Refreshed embed style for on-sale, on-sold, and verification events. Each event now has its own dedicated ping option so you're only notified for conditions you care about. Pings can be disabled individually.
+
+### `skip_on_sale_persistent`
+A persistent skip that reads from `onmarker.json` instead of relying solely on the API. Even if your local data is reset, items already listed for resale won't be re-sold.
+
+### `skip_on_sale`
+A volatile but more accurate API-based skip. Resets with the session  best paired with `skip_on_sale_persistent` for full coverage.
+
+### `skip_assetId`
+Prevents specific items from being listed for sale by asset ID.
+
+and more.....
+
+---
+*This update focuses on stability improvements and finer-grained configuration control.*

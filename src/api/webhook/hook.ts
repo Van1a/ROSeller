@@ -66,8 +66,8 @@ const webhookUpdateOnsale = async (
             icon_url:
               "https://raw.githubusercontent.com/Van1a/roseller/refs/heads/main/asset/rosellerlogo.png",
           },
-          image: {
-            url: "https://raw.githubusercontent.com/Van1a/vsblox/refs/heads/main/Images/da.gif",
+          image: { 
+            url: "https://raw.githubusercontent.com/Van1a/roseller/refs/heads/main/asset/webhookstate.gif",
           },
           thumbnail: {
             url: assetIcon,
@@ -155,7 +155,7 @@ const webhookOnsold = async (
               "https://raw.githubusercontent.com/Van1a/roseller/refs/heads/main/asset/rosellerlogo.png",
           },
           image: {
-            url: "https://raw.githubusercontent.com/Van1a/vsblox/refs/heads/main/Images/da.gif",
+            url: "https://raw.githubusercontent.com/Van1a/roseller/refs/heads/main/asset/webhookstate.gif",
           },
           thumbnail: {
             url: assetIcon,
@@ -196,7 +196,7 @@ const verifyWebhook = async (
   try {
 
     const name = (await axios.get<{"name": string}>(url)).data.name ?? "webhook"
-
+    
     await axios.post(url, {
       content: null,
       embeds: [
@@ -210,7 +210,7 @@ const verifyWebhook = async (
             icon_url: "https://media.tenor.com/1ktJJbUielEAAAAi/opgamingmx.gif",
           },
           image: {
-            url: "https://github.com/Van1a/vsblox/blob/main/Images/Untitled%20design.gif?raw=true",
+            url: "https://raw.githubusercontent.com/Van1a/roseller/refs/heads/main/asset/webhookBannerVerification.gif",
           },
         },
       ],

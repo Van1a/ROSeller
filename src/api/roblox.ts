@@ -1,10 +1,12 @@
 import "dotenv/config";
 import chalk from "chalk";
 import axios from "axios";
+import { config } from "../configuration.js";
 import { error, success, info, warning, devmodelog } from "../misc/logger.js";
 import { type User, type CachedUser } from "../types/api.js";
 
-const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+const wait = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 class RobloxAPI {
   private cookie: string;
@@ -76,7 +78,9 @@ class RobloxAPI {
       if (status === 401) error("Invalid cookie");
 
       if (status === 429) {
-        const resetIn = Number(err?.response?.headers?.["x-ratelimit-reset"] ?? 120);
+        const resetIn = Number(
+          err?.response?.headers?.["x-ratelimit-reset"] ?? 120,
+        );
         this.startCountdown(resetIn);
         await wait(resetIn * 1000);
         return this.getUser();
@@ -113,10 +117,14 @@ class RobloxAPI {
 
       const latency = Date.now() - start;
 
-      devmodelog(`[RobloxAPI] ${method} ${url} -> ${res.status} (${latency}ms)`);
+      devmodelog(
+        `[RobloxAPI] ${method} ${url} -> ${res.status} (${latency}ms)`,
+      );
 
       if (latency > 1000) {
-        warning(`We detected your latency was high (${latency}ms). Expect the request to be slower than usual`);
+          if (config.developer.remove_latency_warning !== true) warning(
+          `We detected your latency was high (${latency}ms). Expect the request to be slower than usual`,
+        );
       }
 
       if (res.status === 429) {
@@ -127,14 +135,16 @@ class RobloxAPI {
       }
 
       if (res.status >= 400) {
-        devmodelog(`Request failed: ${res.status} ${res.data}`)
+        devmodelog(`Request failed: ${res.status} ${res.data}`);
         throw new Error(`Request failed: ${res.status}`);
       }
 
       return res.data;
     } catch (err: any) {
       const latency = Date.now() - start;
-      warning(`[RobloxAPI] request failed after ${latency} ${err.response.data}ms`);
+      if (config.developer.remove_latency_warning !== true) warning(
+          `[RobloxAPI] request failed after ${latency} ${err.response.data}ms`,
+        );
       throw err;
     }
   }

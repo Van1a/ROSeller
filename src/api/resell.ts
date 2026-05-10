@@ -1,4 +1,5 @@
 import { robloxAPI } from "./roblox.js";
+import chalk from "chalk";
 import { calculateDiscount } from "../misc/helper.js";
 import { removeFromInventory } from "../misc/file.js";
 import { webhookUpdateOnsale } from "./webhook/hook.js";
@@ -14,15 +15,18 @@ import {
   type InstanceResponse,
 } from "../types/api.js";
 
-const priceCache = new Map<string, { price: number; timestamp: number }>();
-const CACHE_DURATION = 60000;
+const collectiblePrices = new Map<string, number>();
 
-const hasPriceHistory = async (collectibleItemId: string): Promise<boolean> => {
+const hasPriceHistory = async (collectibleItemId: string, isonsale?: boolean): Promise<boolean> => {
   try {
     const history = await robloxAPI.request<PriceHistory>(
       "GET",
       `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/resale-data`,
     );
+
+    if(isonsale){
+      return true
+    }
 
     const points = history.priceDataPoints;
 
@@ -35,8 +39,6 @@ const hasPriceHistory = async (collectibleItemId: string): Promise<boolean> => {
     return false;
   }
 };
-
-const collectiblePrices = new Map<string, number>();
 
 const getCurrentPrice = async (collectibleItemId: string): Promise<number> => {
   if (collectiblePrices.has(collectibleItemId)) {
@@ -56,7 +58,7 @@ const getCurrentPrice = async (collectibleItemId: string): Promise<number> => {
     }
 
     const data = (list.data ?? []).filter(
-      (listing) => listing.seller.sellerId === user.id
+      (listing) => listing.seller.sellerId === user.id,
     );
 
     const price = data[0]?.price ?? list.data[0]!.price;
@@ -68,59 +70,60 @@ const getCurrentPrice = async (collectibleItemId: string): Promise<number> => {
       await new Promise((resolve) => setTimeout(resolve, 60000));
       return getCurrentPrice(collectibleItemId);
     }
-
     return config.autosaleConfiguration.default_price_no_competition;
   }
 };
 
+const wasAlreadyOnsale = async (
+  instanceId: string,
+  collectibleId: string,
+): Promise<{ isOnsale: boolean; price: number }> => {
+  const user = await robloxAPI.getUser();
 
-const wasAlreadyOnsale = async (instanceId: string): Promise<boolean> => {
   const matchesInstance = (instances: InstanceResponse["itemInstances"]) =>
-    instances?.some(
-      (i) => i.collectibleInstanceId === instanceId && i.saleState === "OnSale"
+    instances?.find(
+      (i) => i.collectibleInstanceId === instanceId && i.saleState === "OnSale",
     );
 
   const buildUrl = (cursor: string) =>
-    `https://apis.roblox.com/marketplace-sales/v1/item/f52d5476-782d-4048-be24-6079ad45b8c2/resellable-instances?cursor=${cursor}&ownerType=User&ownerId=1531406642&limit=500`;
+    `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleId}/resellable-instances?cursor=${cursor}&ownerType=User&ownerId=${user.id}&limit=500`;
 
   const paginate = async (
     startCursor: string | null,
-    direction: "next" | "prev"
-  ): Promise<boolean> => {
+    direction: "next" | "prev",
+  ): Promise<{ isOnsale: boolean; price: number }> => {
     let cursor = startCursor;
     while (cursor !== null) {
       const res: InstanceResponse = await robloxAPI.request<InstanceResponse>(
         "GET",
-        buildUrl(cursor)
+        buildUrl(cursor),
       );
-      if (matchesInstance(res.itemInstances)) return true;
+      const match = matchesInstance(res.itemInstances);
+      if (match) return { isOnsale: true, price: match.price ?? 0 };
       cursor =
         direction === "next"
           ? (res.nextPageCursor ?? null)
           : (res.previousPageCursor ?? null);
     }
-    return false;
+    return { isOnsale: false, price: 0 };
   };
 
   try {
-    // Fetch first page
-    const firstRes: InstanceResponse = await robloxAPI.request<InstanceResponse>(
-      "GET",
-      buildUrl("")
-    );
+    const firstRes: InstanceResponse =
+      await robloxAPI.request<InstanceResponse>("GET", buildUrl(""));
 
-    if (matchesInstance(firstRes.itemInstances)) return true;
+    const match = matchesInstance(firstRes.itemInstances);
+    if (match) return { isOnsale: true, price: match.price ?? 0 };
 
-    // Paginate both directions in parallel
     const [fromNext, fromPrev] = await Promise.all([
       paginate(firstRes.nextPageCursor ?? null, "next"),
       paginate(firstRes.previousPageCursor ?? null, "prev"),
     ]);
 
-    return fromNext || fromPrev;
+    return fromNext.isOnsale ? fromNext : fromPrev;
   } catch (err: any) {
     console.log(err?.response?.status);
-    return false;
+    return { isOnsale: true, price: 0 };
   }
 };
 
@@ -150,8 +153,10 @@ const calculateResellPrice = async (
   try {
     const currentPrice = await getCurrentPrice(collectibleItemId);
 
-    if(currentPrice === config.autosaleConfiguration.default_price_no_competition){
-      return config.autosaleConfiguration.default_price_no_competition
+    if (
+      currentPrice === config.autosaleConfiguration.default_price_no_competition
+    ) {
+      return config.autosaleConfiguration.default_price_no_competition;
     }
 
     const params = await getResellParams(collectibleItemId);
@@ -169,48 +174,105 @@ const calculateResellPrice = async (
 };
 
 const resellItem = async (
+  assetId: number,
   isOnSale: boolean,
-  collectibleProductId: string,
-  collectibleItemId: string,
-  collectibleItemInstanceId: string,
-  serial: number,
-  itemData: ResellData,
+  targetInstanceId: string,
 ): Promise<void> => {
+  const itemData = await getResellData(assetId);
+
+  if (!itemData?.itemInstances?.length) {
+    warning(
+      ` ${chalk.yellowBright("[!]")} No instances found for assetId ${assetId}, skipping.`,
+    );
+    if (itemData)
+      await removeFromInventory(itemData, true, "No instances found", targetInstanceId);
+    return;
+  }
+
+  const targetInstance =
+    itemData.itemInstances.find(
+      (i) => i.collectibleInstanceId === targetInstanceId,
+    ) ?? itemData.itemInstances[0];
+
+  const serial = targetInstance?.serialNumber;
+  const name = itemData.name;
+  const collectibleItemId = itemData.collectibleItemId;
+  const collectibleInstanceId = targetInstance?.collectibleInstanceId;
+  const collectibleProductId = targetInstance?.collectibleProductId;
+
   devmodelog(
-    `[resellItem] isOnSale: ${isOnSale}, collectibleProductId: ${collectibleProductId}, collectibleItemInstanceId: ${collectibleItemInstanceId} serial: ${serial}`,
+    `[resellItem] isOnSale: ${isOnSale}, collectibleProductId: ${collectibleProductId}, collectibleInstanceId: ${collectibleInstanceId} serial: ${serial}`,
   );
 
-  // skip the creator
+  // LOS layer of strictness
+
+  // skip by configuration assetId
+  if (
+    config.autosaleConfiguration.skip_assetId.some(
+      (v) => v === itemData.assetId,
+    )
+  ) {
+    warning(
+      `  ${chalk.bgYellowBright("[!]")} Skipping ${chalk.bold(name)} #${serial} id ${assetId} due to skip_assetId configuration`,
+    );
+    await removeFromInventory(
+      itemData,
+      true,
+      "Item was skipped due to configuration of skip_assetId",
+      collectibleInstanceId,
+    );
+    return;
+  }
+
+  // skip by configuration serial
+  if (config.autosaleConfiguration.skip_serial.some((x) => x === serial)) {
+    warning(
+      ` ${chalk.yellowBright("[!]")} Skipping ${chalk.bold(name)} ${serial}# due to skip serial configuration`,
+    );
+    await removeFromInventory(itemData, true, "Item was remove because of serial configuration", collectibleInstanceId);
+    return;
+  }
+
+  // skip because this item was not resellable
+  if (!(await hasPriceHistory(collectibleItemId, itemData.collectiblesItemDetails.IsForSale))) {
+    warning(
+      ` ${chalk.yellowBright("[!]")} Skipping ${chalk.bold(name)} ${serial}# because this item is not resellable`,
+    );
+    await removeFromInventory(itemData, true, "Skipping the item because this item is not resellable", collectibleInstanceId);
+    return;
+  }
+
+  // skip by configuration creator skip
   if (config.autosaleConfiguration.creator.enable) {
     if (
       config.autosaleConfiguration.creator.skip_creator.includes(
         itemData.creator.CreatorTargetId,
       )
-    ){ 
-      warning(`Skipping ${itemData.name} because of creator skip list ${itemData.creator.CreatorTargetId}`)
+    ) {
+      warning(
+        ` ${chalk.yellowBright("[!]")} Skipping ${chalk.bold(name)} because of creator skip list ${itemData.creator.CreatorTargetId}`,
+      );
+      await removeFromInventory(itemData, true, "Skipping this item because of creator skip configuration", collectibleInstanceId);
       return;
-     }
+    }
   }
 
-  // Skip protected serials
-  if (config.autosaleConfiguration.skip_serial.some((x) => x === serial)) {
-    warning(
-      `Skipping ${itemData.name} ${serial}# due to skip serial configuration`,
+  // skip by configuration skip_on_sale
+  if (config.autosaleConfiguration.skip_on_sale) {
+    const onSaleCheck = await wasAlreadyOnsale(
+      collectibleInstanceId ?? "",
+      collectibleItemId,
     );
-    await removeFromInventory(itemData, true);
-    return;
+
+    if (onSaleCheck.isOnsale) {
+      warning(
+        ` ${chalk.yellowBright("[!]")} This item was already on sale ${chalk.bold(name)} ${serial}# at price ${onSaleCheck.price}`,
+      );
+      await removeFromInventory(itemData, true, "Item was skipped because item was already on-sale", collectibleInstanceId);
+      return;
+    }
   }
 
-  // Check if item is resellable
-  if (!(await hasPriceHistory(collectibleItemId))) {
-    warning(
-      `Skipping ${itemData.name} ${serial}# because this item is not resellable`,
-    );
-    await removeFromInventory(itemData, true);
-    return;
-  }
-
-  // Calculate resell price
   const price = await calculateResellPrice(collectibleItemId);
 
   try {
@@ -226,14 +288,13 @@ const resellItem = async (
 
     await robloxAPI.request(
       "PATCH",
-      `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/instance/${collectibleItemInstanceId}/resale`,
+      `https://apis.roblox.com/marketplace-sales/v1/item/${collectibleItemId}/instance/${collectibleInstanceId}/resale`,
       payload,
       true,
     );
 
     devmodelog(`[resellItem] ${itemData.name} price: ${price}`);
 
-    // Get thumbnail
     const thumb = await getAssetThumbnail(
       "asset",
       itemData.assetId,
@@ -243,55 +304,34 @@ const resellItem = async (
 
     const imageUrl = thumb?.data?.[0]?.imageUrl ?? "";
 
-    success(`Item ${itemData.name} (${serial}#) is now listed at ${price}`);
-    await removeFromInventory(itemData, false);
+    success(
+      ` ${chalk.yellowBright("[+]")}  Item ${chalk.bold(itemData.name)} (${serial}#) is now listed at ${price}`,
+    );
+    await removeFromInventory(itemData, false, undefined, collectibleInstanceId);
 
-    // webhook send on update
     await webhookUpdateOnsale(
       itemData.name,
       itemData.assetId,
-      serial,
+      serial ?? 0,
       price,
       itemData.collectiblesItemDetails.TotalQuantity,
       itemData.creator.Name,
       itemData.creator.CreatorTargetId,
       itemData.creator.CreatorType,
       imageUrl,
-    )
+    );
 
     return;
   } catch (err: any) {
     const status = err?.response?.status;
-
-    if (status === 412) {
-      warning(`This item ${itemData.name} is not resellable. Skipping`);
-      await removeFromInventory(itemData, true);
-      return;
-    }
-
-    if (status === 429) {
-      warning(
-        `Rate limited on item ${itemData.name} (${serial}#) → retrying in 60s`,
-      );
-      await new Promise((resolve) => setTimeout(resolve, 60000));
-      return resellItem(
-        isOnSale,
-        collectibleProductId,
-        collectibleItemId,
-        collectibleItemInstanceId,
-        serial,
-        itemData,
-      );
-    }
-
     info(
-      `Name: ${itemData.name} price ${price}\nonsale: ${isOnSale}\nsellerId: ${(await robloxAPI.getUser()).id}\nInstanceId: ${collectibleItemInstanceId}\ncollectible: ${collectibleItemId}\nproductId: ${collectibleProductId}`,
+      `Name: ${name} price ${price}\nonsale: ${isOnSale}\nsellerId: ${(await robloxAPI.getUser()).id}\nInstanceId: ${collectibleInstanceId}\ncollectible: ${collectibleItemId}\nproductId: ${collectibleProductId}`,
     );
 
     error(
-      `Failed reselling item (${itemData.name}) → status: ${status}. If this persists, contact the maintainer.`,
+      `Failed reselling item (${name}) → status: ${status}. If this persists, contact the maintainer.`,
     );
   }
 };
 
-export { resellItem, getCurrentPrice, wasAlreadyOnsale };
+export { resellItem, getCurrentPrice, hasPriceHistory,  wasAlreadyOnsale };

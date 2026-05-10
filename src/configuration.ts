@@ -1,7 +1,7 @@
 import { type Config } from "./types/config.js";
 
 const config: Config = {
-  version: "1.0.2",
+  version: "1.0.4",
   websocket: {
     enable: false,
     message:
@@ -10,19 +10,19 @@ const config: Config = {
   webhook: {
     onsale: {
       enable: true,
-      webhookUrl: "https://discordapp.com/api/webhooks/1499738719807213650/LuYykVzUbX8yY7Anh-wf9LI4s_vWhirX67KshBZ9eZvHXWWZ9l5NHbTiQCz_Q09aQBG2",
+      webhookUrl: "https://discordapp.com/api/webhooks/",
       ping: {
-        enable: true,
-        discordUserId: 728972494253326369,
+        enable: false,
+        discordUserId: 123,
       },
     },
     onSold: {
-      enable: true,
+      enable: false,
       ms: 120000,
-      webhookUrl: "https://discordapp.com/api/webhooks/1499738719807213650/LuYykVzUbX8yY7Anh-wf9LI4s_vWhirX67KshBZ9eZvHXWWZ9l5NHbTiQCz_Q09aQBG2",
+      webhookUrl: "https://discordapp.com/api/webhooks/",
       ping: {
         enable: false,
-        discordUserId: 728972494253326369,
+        discordUserId: 123,
       }
     },
   },
@@ -30,7 +30,9 @@ const config: Config = {
     enable: true,
     default_price_no_competition: 10000,
     skip_on_sale: true,
+    skip_on_sale_persist: true,
     skip_serial: [1, 2, 3],
+    skip_assetId: [123 , 456],
     creator: {
       enable: true,
       skip_creator: [123, 456],
@@ -41,8 +43,9 @@ const config: Config = {
     },
   },
   developer: {
-    enable: true,
+    enable: false,
     skip_comfirmation: false,
+    remove_latency_warning: true
   },
 };
 
