@@ -309,7 +309,7 @@ const resellItem = async (
     );
     await removeFromInventory(itemData, false, undefined, collectibleInstanceId);
 
-    await webhookUpdateOnsale(
+    if(config.webhook.onsale.enable) await webhookUpdateOnsale(
       itemData.name,
       itemData.assetId,
       serial ?? 0,
